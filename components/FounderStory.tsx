@@ -1,6 +1,7 @@
 export default function FounderStory() {
   return (
     <section
+      id="founder-story"
       style={{
         backgroundColor: '#F3F8FF',
         padding: '48px 28px 52px',
