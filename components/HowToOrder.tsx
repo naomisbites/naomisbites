@@ -28,7 +28,7 @@ const STEPS = [
   },
   {
     n: '04',
-    title: 'Tunggu di pintu rumah',
+    title: 'Pesanan kamu dikirim',
     body: '2–3 hari kemudian toples kamu udah ada di depan pintu. Langsung dari dapur Naomi.',
   },
 ]
