@@ -17,8 +17,8 @@ const PRODUCT_META: Record<string, {
     image: '/images/nastar.png',
     isNew: false,
     prices: [
-      { size: '600ml', price: 'Rp 165.000', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Nastar+600ml+%F0%9F%8D%AA' },
-      { size: '800ml', price: 'Rp 185.000', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Nastar+800ml+%F0%9F%8D%AA' },
+      { size: '600ml', originalPrice: 'Rp 165.000', discountedPrice: 'Rp 115.500', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Nastar+600ml+%F0%9F%8D%AA' },
+      { size: '800ml', originalPrice: 'Rp 185.000', discountedPrice: 'Rp 129.500', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Nastar+800ml+%F0%9F%8D%AA' },
     ],
     badges: ['Wijsman Butter', 'Nanas Asli', 'Buatan Tangan'],
   },
@@ -26,8 +26,8 @@ const PRODUCT_META: Record<string, {
     image: '/images/putri-salju.png',
     isNew: true,
     prices: [
-      { size: '600ml', price: 'Rp 95.000',  waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Putri+Salju+600ml+%E2%9D%84%EF%B8%8F' },
-      { size: '800ml', price: 'Rp 115.000', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Putri+Salju+800ml+%E2%9D%84%EF%B8%8F' },
+      { size: '600ml', originalPrice: 'Rp 95.000',  discountedPrice: 'Rp 66.500', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Putri+Salju+600ml+%E2%9D%84%EF%B8%8F' },
+      { size: '800ml', originalPrice: 'Rp 115.000', discountedPrice: 'Rp 80.500', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Putri+Salju+800ml+%E2%9D%84%EF%B8%8F' },
     ],
     badges: ['Wijsman Butter', 'Buatan Tangan'],
   },
@@ -121,6 +121,44 @@ export default async function Products() {
         Pilih favoritmu.
       </h2>
 
+      {/* Promo Opening Banner */}
+      <div
+        style={{
+          background: 'linear-gradient(135deg, #C8820A 0%, #E8A020 100%)',
+          borderRadius: '16px',
+          padding: '18px 20px',
+          marginBottom: '28px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '12px',
+        }}
+      >
+        <div>
+          <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', margin: '0 0 4px' }}>
+            🎉 Promo Opening
+          </p>
+          <p style={{ color: '#fff', fontSize: '26px', fontWeight: 800, margin: '0 0 2px', lineHeight: '1.1' }}>
+            Diskon 30%
+          </p>
+          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '12px', margin: 0 }}>
+            untuk semua produk
+          </p>
+        </div>
+        <div
+          style={{
+            backgroundColor: 'rgba(255,255,255,0.2)',
+            borderRadius: '12px',
+            padding: '10px 14px',
+            textAlign: 'center',
+            flexShrink: 0,
+          }}
+        >
+          <p style={{ color: '#fff', fontSize: '28px', fontWeight: 900, margin: 0, lineHeight: 1 }}>30%</p>
+          <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '10px', fontWeight: 700, margin: '2px 0 0', letterSpacing: '1px' }}>OFF</p>
+        </div>
+      </div>
+
       {/* Cards */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
         {products.map((product) => {
@@ -155,7 +193,7 @@ export default async function Products() {
           marginTop: '22px',
         }}
       >
-        Maks. 4 toples per hari · Dikirim ke seluruh Indonesia
+        🇮🇩 Dikirim ke seluruh Indonesia
       </p>
     </section>
   )

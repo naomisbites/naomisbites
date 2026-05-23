@@ -22,7 +22,7 @@ interface Props {
   subtitle: string
   image: string
   isNew: boolean
-  prices: { size: string; price: string; waLink: string }[]
+  prices: { size: string; originalPrice: string; discountedPrice: string; waLink: string }[]
   badges: string[]
 }
 
@@ -35,8 +35,9 @@ export default function ProductCard({
   badges,
 }: Props) {
   const [selected, setSelected] = useState(0)
-  const activePrice  = prices[selected]?.price  ?? ''
-  const activeWaLink = prices[selected]?.waLink ?? ''
+  const activeOriginal   = prices[selected]?.originalPrice   ?? ''
+  const activeDiscounted = prices[selected]?.discountedPrice ?? ''
+  const activeWaLink     = prices[selected]?.waLink          ?? ''
 
   return (
     <div
@@ -48,7 +49,7 @@ export default function ProductCard({
         position: 'relative',
       }}
     >
-      {/* "Baru" badge */}
+      {/* "Baru" badge — top right */}
       {isNew && (
         <div
           style={{
@@ -70,8 +71,8 @@ export default function ProductCard({
         </div>
       )}
 
-      {/* Product photo */}
-      <div style={{ width: '100%', height: '260px', overflow: 'hidden' }}>
+      {/* Product photo + Hemat badge inside same relative container */}
+      <div style={{ width: '100%', height: '260px', overflow: 'hidden', position: 'relative' }}>
         <img
           src={image}
           alt={name}
@@ -82,18 +83,35 @@ export default function ProductCard({
             objectPosition: 'center center',
           }}
         />
+        {/* "Hemat 30%" badge — bottom left of photo */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '14px',
+            left: '14px',
+            backgroundColor: '#EF4444',
+            color: '#fff',
+            fontSize: '12px',
+            fontWeight: 700,
+            padding: '5px 12px',
+            borderRadius: '20px',
+            letterSpacing: '0.5px',
+          }}
+        >
+          Hemat 30%
+        </div>
       </div>
 
       {/* Card content */}
       <div style={{ padding: '18px 20px 22px' }}>
 
-        {/* Name (left) + active price (right) */}
+        {/* Name + subtitle (left) / Price stack (right) */}
         <div
           style={{
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'flex-start',
-            marginBottom: '4px',
+            marginBottom: '16px',
           }}
         >
           <div>
@@ -119,17 +137,31 @@ export default function ProductCard({
               {subtitle}
             </p>
           </div>
-          <span
-            style={{
-              color: '#C8820A',
-              fontSize: '20px',
-              fontWeight: 700,
-              whiteSpace: 'nowrap',
-              paddingTop: '2px',
-            }}
-          >
-            {activePrice}
-          </span>
+
+          {/* Price — original crossed out above, discounted below */}
+          <div style={{ textAlign: 'right', flexShrink: 0, paddingLeft: '12px' }}>
+            <p
+              style={{
+                color: '#9CA3AF',
+                fontSize: '12px',
+                textDecoration: 'line-through',
+                margin: '0 0 2px',
+              }}
+            >
+              {activeOriginal}
+            </p>
+            <p
+              style={{
+                color: '#C8820A',
+                fontSize: '22px',
+                fontWeight: 800,
+                margin: 0,
+                lineHeight: 1,
+              }}
+            >
+              {activeDiscounted}
+            </p>
+          </div>
         </div>
 
         {/* Size toggle pills */}
