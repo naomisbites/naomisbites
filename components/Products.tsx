@@ -6,31 +6,28 @@ const WA_NASTAR =
 const WA_PUTRI =
   'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Putri+Salju+%E2%9D%84%EF%B8%8F'
 
-// Static product config — images, WA links, pricing tiers, and badges per slug
+// Static product config — images, pricing tiers (with per-size WA links), and badges per slug
 const PRODUCT_META: Record<string, {
   image: string
-  waLink: string
   isNew: boolean
-  prices: { size: string; price: string }[]
+  prices: { size: string; price: string; waLink: string }[]
   badges: string[]
 }> = {
   'kue-nastar': {
     image: '/images/nastar.png',
-    waLink: WA_NASTAR,
     isNew: false,
     prices: [
-      { size: '600ml', price: 'Rp 165.000' },
-      { size: '800ml', price: 'Rp 185.000' },
+      { size: '600ml', price: 'Rp 165.000', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Nastar+600ml+%F0%9F%8D%AA' },
+      { size: '800ml', price: 'Rp 185.000', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Nastar+800ml+%F0%9F%8D%AA' },
     ],
     badges: ['Wijsman Butter', 'Nanas Asli', 'Buatan Tangan'],
   },
   'kue-putri-salju': {
     image: '/images/putri-salju.png',
-    waLink: WA_PUTRI,
     isNew: true,
     prices: [
-      { size: '600ml', price: 'Rp 95.000' },
-      { size: '800ml', price: 'Rp 115.000' },
+      { size: '600ml', price: 'Rp 95.000',  waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Putri+Salju+600ml+%E2%9D%84%EF%B8%8F' },
+      { size: '800ml', price: 'Rp 115.000', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Putri+Salju+800ml+%E2%9D%84%EF%B8%8F' },
     ],
     badges: ['Wijsman Butter', 'Buatan Tangan'],
   },
@@ -141,7 +138,6 @@ export default async function Products() {
               name={product.name}
               subtitle={product.subtitle}
               image={meta.image}
-              waLink={meta.waLink}
               isNew={meta.isNew}
               prices={meta.prices}
               badges={meta.badges}

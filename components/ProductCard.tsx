@@ -21,9 +21,8 @@ interface Props {
   name: string
   subtitle: string
   image: string
-  waLink: string
   isNew: boolean
-  prices: { size: string; price: string }[]
+  prices: { size: string; price: string; waLink: string }[]
   badges: string[]
 }
 
@@ -31,13 +30,13 @@ export default function ProductCard({
   name,
   subtitle,
   image,
-  waLink,
   isNew,
   prices,
   badges,
 }: Props) {
   const [selected, setSelected] = useState(0)
-  const activePrice = prices[selected]?.price ?? ''
+  const activePrice  = prices[selected]?.price  ?? ''
+  const activeWaLink = prices[selected]?.waLink ?? ''
 
   return (
     <div
@@ -134,7 +133,19 @@ export default function ProductCard({
         </div>
 
         {/* Size toggle pills */}
-        <div style={{ display: 'flex', gap: '8px', margin: '14px 0 16px' }}>
+        <p
+          style={{
+            color: '#6B7280',
+            fontSize: '11px',
+            fontWeight: 600,
+            textTransform: 'uppercase',
+            letterSpacing: '1px',
+            margin: '14px 0 8px',
+          }}
+        >
+          Pilih Varian
+        </p>
+        <div style={{ display: 'flex', gap: '8px', marginBottom: '18px' }}>
           {prices.map((tier, i) => (
             <button
               key={tier.size}
@@ -157,35 +168,9 @@ export default function ProductCard({
           ))}
         </div>
 
-        {/* Ingredient badges */}
-        <div
-          style={{
-            display: 'flex',
-            gap: '6px',
-            marginBottom: '18px',
-            flexWrap: 'wrap',
-          }}
-        >
-          {badges.map((b) => (
-            <span
-              key={b}
-              style={{
-                backgroundColor: '#EEF3FB',
-                color: '#1C355E',
-                fontSize: '11px',
-                fontWeight: 600,
-                padding: '4px 10px',
-                borderRadius: '20px',
-              }}
-            >
-              {b}
-            </span>
-          ))}
-        </div>
-
         {/* WhatsApp CTA */}
         <a
-          href={waLink}
+          href={activeWaLink}
           target="_blank"
           rel="noopener noreferrer"
           style={{
