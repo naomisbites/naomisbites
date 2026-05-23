@@ -50,7 +50,7 @@ export default function HowToOrder() {
         src="/images/how-to-order-bg.jpg"
         alt=""
         fill
-        style={{ objectFit: 'cover', objectPosition: 'center', opacity: 0.3 }}
+        style={{ objectFit: 'cover', objectPosition: 'center', opacity: 0.15 }}
         sizes="430px"
         aria-hidden="true"
       />
