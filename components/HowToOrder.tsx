@@ -17,12 +17,12 @@ const STEPS = [
   {
     n: '02',
     title: 'Kirim pesan ke Naomi',
-    body: 'Ketuk tombol WhatsApp. Pesan masuk langsung ke HP Naomi. Bukan bot, bukan admin.',
+    body: 'Ketuk tombol WhatsApp. Pesan masuk langsung ke HP Naomi.',
   },
   {
     n: '03',
     title: 'Bayar & konfirmasi',
-    body: 'Naomi kasih nomor BCA-nya langsung di chat. Transfer, kirimin buktinya, beres.',
+    body: 'Naomi kasih nomor BCA-nya langsung di chat.',
   },
   {
     n: '04',
@@ -51,9 +51,7 @@ export default function HowToOrder() {
         Dari chat kamu,<br />
         langsung ke <em style={{ color: '#C8820A', fontStyle: 'italic' }}>dapur Naomi</em>.
       </h2>
-      <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '13px', margin: '0 0 32px', lineHeight: 1.6 }}>
-        Pesanmu langsung masuk ke HP Naomi. Bukan bot. Naomi sendiri yang balas.
-      </p>
+      <div style={{ margin: '0 0 32px' }} />
 
       {/* WhatsApp Chat Mockup */}
       <div style={{ backgroundColor: '#0d1117', borderRadius: '20px', overflow: 'hidden', marginBottom: '32px', boxShadow: '0 8px 32px rgba(0,0,0,0.4)' }}>
