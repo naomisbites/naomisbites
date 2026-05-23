@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 function WhatsAppIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="white" style={{ flexShrink: 0 }} aria-hidden="true">
@@ -36,18 +38,32 @@ export default function HowToOrder() {
     <section
       id="cara-pesan"
       style={{
-        backgroundColor: '#1C355E',
+        backgroundColor: '#F3F8FF',
         padding: '52px 24px 60px',
         fontFamily: 'var(--font-plus-jakarta)',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
+      {/* Background image at 10% opacity */}
+      <Image
+        src="/images/how-to-order-bg.jpg"
+        alt=""
+        fill
+        style={{ objectFit: 'cover', objectPosition: 'center', opacity: 0.1 }}
+        sizes="430px"
+        aria-hidden="true"
+      />
+      {/* Content sits above the bg image */}
+      <div style={{ position: 'relative', zIndex: 1 }}>
+
       {/* Label */}
       <p style={{ color: '#C8820A', fontSize: '11px', fontWeight: 700, letterSpacing: '2.4px', textTransform: 'uppercase', margin: '0 0 10px' }}>
         Cara Pesan
       </p>
 
       {/* Headline */}
-      <h2 style={{ color: '#fff', fontSize: '26px', fontWeight: 800, lineHeight: 1.25, margin: '0 0 6px' }}>
+      <h2 style={{ color: '#1C355E', fontSize: '26px', fontWeight: 800, lineHeight: 1.25, margin: '0 0 6px' }}>
         Dari chat kamu,<br />
         langsung ke <em style={{ color: '#C8820A', fontStyle: 'italic' }}>dapur Naomi</em>.
       </h2>
@@ -97,12 +113,13 @@ export default function HowToOrder() {
               <span style={{ color: '#C8820A', fontSize: '12px', fontWeight: 800 }}>{s.n}</span>
             </div>
             <div>
-              <p style={{ color: '#fff', fontSize: '14px', fontWeight: 700, margin: '0 0 3px' }}>{s.title}</p>
-              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', margin: 0, lineHeight: 1.5 }}>{s.body}</p>
+              <p style={{ color: '#1C355E', fontSize: '14px', fontWeight: 700, margin: '0 0 3px' }}>{s.title}</p>
+              <p style={{ color: '#6B7280', fontSize: '12px', margin: 0, lineHeight: 1.5 }}>{s.body}</p>
             </div>
           </div>
         ))}
       </div>
+      </div> {/* end z-index wrapper */}
     </section>
   )
 }
