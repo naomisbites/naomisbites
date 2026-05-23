@@ -1,83 +1,198 @@
-const testimonials = [
-  {
-    name: 'Sari W.',
-    location: 'Jakarta',
-    rating: 5,
-    text: 'Jujur gak nyangka bisa sepremium ini. Biasanya nastar yang dikirim online texturenya keras. Ini beneran lembut dan aromanya harum banget. Langsung repeat order.',
-    product: 'Kue Nastar',
-    avatar: 'SW',
-  },
-  {
-    name: 'Dian P.',
-    location: 'Surabaya',
-    rating: 5,
-    text: 'Putri saljunya legit banget, gula halusnya tidak terlalu manis. Habis dalam 2 hari karena langsung rebutan sama keluarga 😂 Bakal beli lagi sebelum Lebaran.',
-    product: 'Kue Putri Salju',
-    avatar: 'DP',
-  },
-  {
-    name: 'Reza M.',
-    location: 'Bandung',
-    rating: 5,
-    text: 'Sudah cobain nastar dari banyak tempat. Ini yang paling mirip sama buatan almarhumah ibu saya. Rasanya nostalgia banget. Terima kasih Naomi.',
-    product: 'Kue Nastar',
-    avatar: 'RM',
-  },
+'use client'
+
+import { useState, useRef, useEffect, useCallback } from 'react'
+
+const VIDEOS = [
+  { src: '/videos/testimonial-1.mp4', duration: 30 },
+  { src: '/videos/testimonial-2.mp4', duration: 19 },
+  { src: '/videos/testimonial-3.mp4', duration: 30 },
 ]
 
 export default function Testimonials() {
+  const [current, setCurrent] = useState(0)
+  const [muted, setMuted] = useState(true)
+  const [playing, setPlaying] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  const goTo = useCallback((index: number) => {
+    setCurrent(((index % VIDEOS.length) + VIDEOS.length) % VIDEOS.length)
+  }, [])
+
+  // Load + play whenever current changes
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+    video.load()
+    video.play().then(() => setPlaying(true)).catch(() => setPlaying(false))
+  }, [current])
+
+  // Auto-advance when video ends
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+    const onEnded = () => goTo(current + 1)
+    video.addEventListener('ended', onEnded)
+    return () => video.removeEventListener('ended', onEnded)
+  }, [current, goTo])
+
+  const handleTap = (e: React.MouseEvent<HTMLDivElement>) => {
+    const x = e.clientX - e.currentTarget.getBoundingClientRect().left
+    const half = e.currentTarget.offsetWidth / 2
+    if (x < half) {
+      goTo(current - 1)
+    } else {
+      goTo(current + 1)
+    }
+  }
+
+  const toggleMute = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    const newMuted = !muted
+    setMuted(newMuted)
+    if (videoRef.current) videoRef.current.muted = newMuted
+  }
+
   return (
-    <section className="bg-navy py-20 md:py-28">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Header */}
-        <div className="text-center max-w-xl mx-auto mb-14">
-          <p className="text-gold text-sm font-semibold tracking-widest uppercase mb-3">
-            Kata mereka
-          </p>
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mb-4">
-            Mereka sudah coba.
-            <span className="text-gold italic block">Sekarang giliranmu.</span>
-          </h2>
-          <p className="text-white/60 text-base">
-            Testimoni nyata dari pelanggan yang sudah order. Tidak ada skrip,
-            tidak ada endorse berbayar.
-          </p>
-        </div>
+    <section
+      id="testimonials"
+      style={{ backgroundColor: '#0d0d0d', fontFamily: 'var(--font-plus-jakarta)' }}
+    >
+      {/* Section label */}
+      <div style={{ padding: '36px 24px 20px' }}>
+        <p style={{ color: '#C8820A', fontSize: '11px', fontWeight: 700, letterSpacing: '2.4px', textTransform: 'uppercase', margin: '0 0 8px' }}>
+          Kata Mereka
+        </p>
+        <h2 style={{ color: '#fff', fontSize: '24px', fontWeight: 800, lineHeight: 1.25, margin: 0 }}>
+          Bukan kami yang bilang.<br />
+          <em style={{ color: '#C8820A', fontStyle: 'italic' }}>Mereka yang buktiin.</em>
+        </h2>
+      </div>
 
-        {/* Testimonial cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors">
-              {/* Stars */}
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: t.rating }).map((_, s) => (
-                  <span key={s} className="text-gold text-lg">★</span>
-                ))}
-              </div>
+      {/* Stories player */}
+      <div
+        style={{
+          position: 'relative',
+          width: '100%',
+          aspectRatio: '9/16',
+          backgroundColor: '#000',
+          overflow: 'hidden',
+          cursor: 'pointer',
+        }}
+      >
+        {/* Keyframes for progress bar */}
+        <style>{`
+          @keyframes storyProgress {
+            from { width: 0% }
+            to   { width: 100% }
+          }
+        `}</style>
 
-              {/* Quote */}
-              <p className="text-white/90 text-sm leading-relaxed mb-6 italic">
-                &ldquo;{t.text}&rdquo;
-              </p>
+        {/* Video */}
+        <video
+          ref={videoRef}
+          key={current}
+          src={VIDEOS[current].src}
+          playsInline
+          autoPlay
+          muted={muted}
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+          }}
+        />
 
-              {/* Author */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold font-bold text-sm shrink-0">
-                  {t.avatar}
-                </div>
-                <div>
-                  <p className="text-white font-semibold text-sm">{t.name}</p>
-                  <p className="text-white/50 text-xs">{t.location} · {t.product}</p>
-                </div>
-              </div>
+        {/* Top gradient for progress bar readability */}
+        <div style={{
+          position: 'absolute',
+          top: 0, left: 0, right: 0,
+          height: '80px',
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.55), transparent)',
+          pointerEvents: 'none',
+          zIndex: 6,
+        }} />
+
+        {/* Progress bars */}
+        <div style={{
+          position: 'absolute',
+          top: '14px', left: '12px', right: '12px',
+          display: 'flex',
+          gap: '4px',
+          zIndex: 10,
+          pointerEvents: 'none',
+        }}>
+          {VIDEOS.map((v, i) => (
+            <div
+              key={i}
+              style={{
+                flex: 1,
+                height: '2.5px',
+                backgroundColor: 'rgba(255,255,255,0.35)',
+                borderRadius: '2px',
+                overflow: 'hidden',
+              }}
+            >
+              {i < current && (
+                <div style={{ width: '100%', height: '100%', backgroundColor: '#fff' }} />
+              )}
+              {i === current && playing && (
+                <div style={{
+                  width: '0%',
+                  height: '100%',
+                  backgroundColor: '#fff',
+                  animation: `storyProgress ${v.duration}s linear forwards`,
+                }} />
+              )}
             </div>
           ))}
         </div>
 
-        {/* Placeholder note */}
-        <p className="text-center text-white/30 text-xs mt-8">
-          Testimoni di atas akan diperbarui dengan ulasan asli setelah pelanggan pertama masuk.
-        </p>
+        {/* Tap zones */}
+        <div
+          onClick={handleTap}
+          style={{ position: 'absolute', inset: 0, zIndex: 5 }}
+        />
+
+        {/* Mute toggle */}
+        <button
+          onClick={toggleMute}
+          style={{
+            position: 'absolute',
+            bottom: '20px',
+            right: '16px',
+            zIndex: 10,
+            backgroundColor: 'rgba(0,0,0,0.5)',
+            border: 'none',
+            borderRadius: '50%',
+            width: '36px',
+            height: '36px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            fontSize: '16px',
+          }}
+          aria-label={muted ? 'Unmute' : 'Mute'}
+        >
+          {muted ? '🔇' : '🔊'}
+        </button>
+
+        {/* Story counter */}
+        <div style={{
+          position: 'absolute',
+          bottom: '20px',
+          left: '16px',
+          zIndex: 10,
+          backgroundColor: 'rgba(0,0,0,0.5)',
+          borderRadius: '20px',
+          padding: '4px 12px',
+        }}>
+          <span style={{ color: '#fff', fontSize: '12px', fontWeight: 600 }}>
+            {current + 1} / {VIDEOS.length}
+          </span>
+        </div>
       </div>
     </section>
   )
