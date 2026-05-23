@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
+import FounderStory from '@/components/FounderStory'
 import FloatingWhatsApp from '@/components/FloatingWhatsApp'
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <FounderStory />
       </main>
       <FloatingWhatsApp />
     </>

@@ -35,20 +35,20 @@ export default function Hero() {
       {/* Text + CTA — anchored to bottom */}
       <div className="absolute inset-x-0 bottom-0 z-10 pb-10 px-8">
 
-        {/* Headline */}
+        {/* Headline — maxWidth 320px matches Figma line breaks exactly */}
         <h1
-          className="text-white text-center text-[25px] leading-[34px] font-medium mb-4"
-          style={{ fontFamily: 'var(--font-plus-jakarta)' }}
+          className="text-white text-center text-[25px] leading-[34px] font-medium mb-4 mx-auto"
+          style={{ fontFamily: 'var(--font-plus-jakarta)', maxWidth: '320px' }}
         >
           Rasa yang selalu kamu rindukan,{' '}
           kini hadir dari dapur kami di{' '}
           <span className="font-bold">Bali.</span>
         </h1>
 
-        {/* Body */}
+        {/* Body — maxWidth 310px matches Figma line break after "asli." */}
         <p
-          className="text-white/80 text-center text-[15px] leading-[22px] font-normal mb-8"
-          style={{ fontFamily: 'var(--font-plus-jakarta)' }}
+          className="text-white/80 text-center text-[15px] leading-[22px] font-normal mb-8 mx-auto"
+          style={{ fontFamily: 'var(--font-plus-jakarta)', maxWidth: '310px' }}
         >
           Dibuat dari Wijsman butter dan nanas asli.{' '}
           Dikirim ke seluruh Indonesia.

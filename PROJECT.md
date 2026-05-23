@@ -5,6 +5,42 @@
 
 ---
 
+## 0. Figma-to-Code Rule (MANDATORY)
+
+> Every section must be built by reading Figma data first. No guessing, no improvising.
+
+### The workflow for every section
+
+1. **Fetch Figma node data before writing any code**
+   ```
+   curl "https://api.figma.com/v1/files/FILE_KEY/nodes?ids=NODE_ID&depth=6" \
+     -H "X-Figma-Token: YOUR_FIGMA_TOKEN"
+   ```
+   *(File key and token are in `.env.local` — never commit them)*
+   Extract for every text node: `characters`, `fontSize`, `fontWeight`, `fontStyle`, `lineHeightPx`, `letterSpacing`, `textAlignHorizontal`, and `absoluteBoundingBox.width`
+
+2. **Set `maxWidth` on every text element**
+   Every text node in Figma has an explicit pixel width (`absoluteBoundingBox.width`). That value becomes `maxWidth` in the component. This is what locks line breaks to match Figma exactly. Without it, text flows wider and every line breaks at the wrong word.
+
+3. **Copy text verbatim** — never paraphrase, improve, or substitute. If Figma says "tentang", code says "tentang". If Figma has an emoji, code has the emoji.
+
+4. **Extract all spacing and dimensions from Figma** — padding, gap, width, height, border-radius, border width/colour. Nothing is eyeballed.
+
+5. **Canvas-measure as rate-limit fallback** — if the Figma API returns 429, derive `maxWidth` via `ctx.measureText()` in the browser to find the exact pixel width that produces the correct line breaks.
+
+6. **Screenshot → compare line-by-line** — after building, take a screenshot and verify each line of text against the Figma screenshot word-for-word before marking a section done.
+
+### What went wrong (and must not repeat)
+
+| Mistake | Root cause | Fix |
+|---|---|---|
+| Wrong words on each line | No `maxWidth` set — text flowed wider than Figma | Always fetch `absoluteBoundingBox.width` and apply as `maxWidth` |
+| "soal" instead of "tentang" | Copied text from memory / earlier build, not re-fetched | Always re-read `characters` from Figma API for the current design |
+| Photo too small → quote wrapped wrong | Photo dimensions not re-fetched after Figma was updated | Fetch `absoluteBoundingBox` for every container, not just text |
+| Subtext on wrong line | `maxWidth` missing on body paragraph | Every text block needs `maxWidth`, not just headlines |
+
+---
+
 ## 1. Business Overview
 
 **Business Name:** Naomi's Bites
@@ -175,7 +211,8 @@ created_at    timestamptz default now()
 | # | Section | Status | Notes |
 |---|---|---|---|
 | 1 | Navbar | ✅ Done | Logo top-left, burger menu top-right, transparent overlay |
-| 2 | Hero | ✅ Done | Full-bleed photo, gradient, headline, WhatsApp CTA |
+| 2 | Hero | ✅ Done | Full-bleed photo, gradient, headline, WhatsApp CTA. maxWidth set on all text nodes. |
+| 2b | Founder Story | ✅ Done | Photo, quote, body copy. All text maxWidth matched to Figma. |
 | 3 | Trust Bar | ⬜ Not started | Design in Figma first |
 | 4 | The Difference | ⬜ Not started | Design in Figma first |
 | 5 | Products | ⬜ Not started | Design in Figma first |
