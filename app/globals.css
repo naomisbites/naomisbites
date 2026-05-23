@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
+@theme {
+  /* Brand Colours */
+  --color-navy: #1B2D5F;
+  --color-navy-light: #2B4080;
+  --color-navy-muted: #1B2D5F1A;
+  --color-cream: #FAF7F2;
+  --color-cream-dark: #F0EBE3;
+  --color-gold: #C8820A;
+  --color-gold-light: #E09B1E;
+  --color-surface: #FFFFFF;
+  --color-text-muted: #6B7280;
+
+  /* Fonts */
+  --font-display: var(--font-playfair);
+  --font-body: var(--font-dm-sans);
+
+  /* Marquee animation */
+  --animate-marquee: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Remove dark mode — brand requires cream background always */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light only;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #1B2D5F;
+  color: #1B2D5F;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Floating WhatsApp pulse */
+@keyframes pulse-wa {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+}
+
+.pulse-wa {
+  animation: pulse-wa 2s ease-in-out infinite;
+}
+
+/* FAQ accordion transition */
+.faq-content {
+  transition: max-height 0.3s ease, opacity 0.3s ease;
 }
