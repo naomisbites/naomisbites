@@ -37,6 +37,20 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #1C355D #1C355D;
+}
+
+/* Webkit scrollbar — matches navy body so it's invisible on desktop */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1C355D;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a4a7f;
+  border-radius: 3px;
 }
 
 body {
