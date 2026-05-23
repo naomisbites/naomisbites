@@ -48,8 +48,8 @@ export default function HowToOrder() {
 
       {/* Headline */}
       <h2 style={{ color: '#fff', fontSize: '26px', fontWeight: 800, lineHeight: 1.25, margin: '0 0 6px' }}>
-        Tidak ada keranjang.<br />
-        Tidak ada <em style={{ color: '#C8820A', fontStyle: 'italic' }}>checkout</em>.
+        Dari chat kamu,<br />
+        langsung ke <em style={{ color: '#C8820A', fontStyle: 'italic' }}>dapur Naomi</em>.
       </h2>
       <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '13px', margin: '0 0 32px', lineHeight: 1.6 }}>
         Pesanmu langsung masuk ke HP Naomi. Bukan bot. Naomi sendiri yang balas.
