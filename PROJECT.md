@@ -170,19 +170,36 @@ created_at    timestamptz default now()
 **Deadline:** May 2026
 **Goal:** Get Naomi selling on Monday.
 
-- Static catalog with 2 products (Kue Nastar, Kue Putri Salju)
-- Full conversion-optimised page (Belief Shift framework)
-- All 14 sections: Hero, Trust Bar, Difference, Products, Gallery, Testimonials, FAQ, Final CTA, etc.
-- WhatsApp CTA throughout (pre-filled message)
-- SEO optimised (meta, structured data, Open Graph, sitemap, robots.txt)
-- Placeholder images (to be replaced by real photography)
-- Mobile-first, responsive
-- Core Web Vitals green
+#### Website Sections Tracker
 
-**Tech additions in this phase:**
-- Google Fonts (Playfair Display + DM Sans)
-- Supabase client for product data fetch
-- Structured data (LocalBusiness + Product schema)
+| # | Section | Status | Notes |
+|---|---|---|---|
+| 1 | Navbar | ✅ Done | Logo top-left, burger menu top-right, transparent overlay |
+| 2 | Hero | ✅ Done | Full-bleed photo, gradient, headline, WhatsApp CTA |
+| 3 | Trust Bar | ⬜ Not started | Design in Figma first |
+| 4 | The Difference | ⬜ Not started | Design in Figma first |
+| 5 | Products | ⬜ Not started | Design in Figma first |
+| 6 | Gallery | ⬜ Not started | Design in Figma first |
+| 7 | Testimonials | ⬜ Not started | Design in Figma first |
+| 8 | FAQ | ⬜ Not started | Design in Figma first |
+| 9 | Final CTA | ⬜ Not started | Design in Figma first |
+| 10 | Instagram Strip | ⬜ Not started | Design in Figma first |
+| 11 | Footer | ⬜ Not started | Design in Figma first |
+
+#### Technical Checklist
+
+| Item | Status | Notes |
+|---|---|---|
+| Mobile-first 430px container | ✅ Done | Navy sides on desktop |
+| Floating WhatsApp button | ✅ Done | Container-aware positioning |
+| Google Fonts (Plus Jakarta Sans) | ✅ Done | Also Playfair Display + DM Sans |
+| SEO metadata + Open Graph | ✅ Done | In layout.tsx |
+| Structured data (LocalBusiness + Product) | ✅ Done | In layout.tsx |
+| Supabase client setup | ✅ Done | lib/supabase.ts |
+| sitemap.xml | ⬜ Not started | |
+| robots.txt | ⬜ Not started | |
+| Mobile device testing | ⬜ Not started | iPhone Safari + Android Chrome |
+| Merge dev → main (go live) | ⬜ Not started | After all sections done |
 
 ---
 

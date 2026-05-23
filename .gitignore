@@ -37,6 +37,13 @@ yarn-error.log*
 # vercel
 .vercel
 
+# IDE / Claude Code config
+.claude/
+
+# Heavy raw image originals (use optimised versions instead)
+public/images/hero-bg.png
+public/images/hero-bg.jpg
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
