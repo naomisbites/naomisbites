@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 function WhatsAppIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="white" style={{ flexShrink: 0 }} aria-hidden="true">
@@ -41,21 +39,9 @@ export default function HowToOrder() {
         backgroundColor: '#F3F8FF',
         padding: '52px 24px 60px',
         fontFamily: 'var(--font-plus-jakarta)',
-        position: 'relative',
-        overflow: 'hidden',
       }}
     >
-      {/* Background image at 10% opacity */}
-      <Image
-        src="/images/how-to-order-bg.jpg"
-        alt=""
-        fill
-        style={{ objectFit: 'cover', objectPosition: 'center', opacity: 0.15 }}
-        sizes="430px"
-        aria-hidden="true"
-      />
-      {/* Content sits above the bg image */}
-      <div style={{ position: 'relative', zIndex: 1 }}>
+      <div>
 
       {/* Label */}
       <p style={{ color: '#C8820A', fontSize: '11px', fontWeight: 700, letterSpacing: '2.4px', textTransform: 'uppercase', margin: '0 0 10px' }}>
