@@ -55,7 +55,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      style={{ backgroundColor: '#0d0d0d', fontFamily: 'var(--font-plus-jakarta)' }}
+      style={{ backgroundColor: '#1C355D', fontFamily: 'var(--font-plus-jakarta)' }}
     >
       {/* Section label */}
       <div style={{ padding: '36px 24px 20px' }}>
@@ -154,6 +154,60 @@ export default function Testimonials() {
           onClick={handleTap}
           style={{ position: 'absolute', inset: 0, zIndex: 5 }}
         />
+
+        {/* Left arrow */}
+        <button
+          onClick={(e) => { e.stopPropagation(); goTo(current - 1) }}
+          style={{
+            position: 'absolute',
+            left: '12px',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            zIndex: 10,
+            backgroundColor: 'rgba(0,0,0,0.45)',
+            border: '1.5px solid rgba(255,255,255,0.3)',
+            borderRadius: '50%',
+            width: '40px',
+            height: '40px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            color: '#fff',
+            fontSize: '18px',
+            lineHeight: 1,
+          }}
+          aria-label="Previous"
+        >
+          ‹
+        </button>
+
+        {/* Right arrow */}
+        <button
+          onClick={(e) => { e.stopPropagation(); goTo(current + 1) }}
+          style={{
+            position: 'absolute',
+            right: '12px',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            zIndex: 10,
+            backgroundColor: 'rgba(0,0,0,0.45)',
+            border: '1.5px solid rgba(255,255,255,0.3)',
+            borderRadius: '50%',
+            width: '40px',
+            height: '40px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            color: '#fff',
+            fontSize: '18px',
+            lineHeight: 1,
+          }}
+          aria-label="Next"
+        >
+          ›
+        </button>
 
         {/* Mute toggle */}
         <button
