@@ -98,7 +98,7 @@ export default function ProductCard({
             letterSpacing: '0.5px',
           }}
         >
-          Hemat 30%
+          Hemat 20%
         </div>
       </div>
 

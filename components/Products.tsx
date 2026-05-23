@@ -17,8 +17,8 @@ const PRODUCT_META: Record<string, {
     image: '/images/nastar.png',
     isNew: false,
     prices: [
-      { size: '600ml', originalPrice: 'Rp 165.000', discountedPrice: 'Rp 115.500', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Nastar+600ml+%F0%9F%8D%AA' },
-      { size: '800ml', originalPrice: 'Rp 185.000', discountedPrice: 'Rp 129.500', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Nastar+800ml+%F0%9F%8D%AA' },
+      { size: '600ml', originalPrice: 'Rp 165.000', discountedPrice: 'Rp 132.000', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Nastar+600ml+%F0%9F%8D%AA' },
+      { size: '800ml', originalPrice: 'Rp 185.000', discountedPrice: 'Rp 148.000', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Nastar+800ml+%F0%9F%8D%AA' },
     ],
     badges: ['Wijsman Butter', 'Nanas Asli', 'Buatan Tangan'],
   },
@@ -26,8 +26,8 @@ const PRODUCT_META: Record<string, {
     image: '/images/putri-salju.png',
     isNew: true,
     prices: [
-      { size: '600ml', originalPrice: 'Rp 95.000',  discountedPrice: 'Rp 66.500', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Putri+Salju+600ml+%E2%9D%84%EF%B8%8F' },
-      { size: '800ml', originalPrice: 'Rp 115.000', discountedPrice: 'Rp 80.500', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Putri+Salju+800ml+%E2%9D%84%EF%B8%8F' },
+      { size: '600ml', originalPrice: 'Rp 95.000',  discountedPrice: 'Rp 76.000', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Putri+Salju+600ml+%E2%9D%84%EF%B8%8F' },
+      { size: '800ml', originalPrice: 'Rp 115.000', discountedPrice: 'Rp 92.000', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Putri+Salju+800ml+%E2%9D%84%EF%B8%8F' },
     ],
     badges: ['Wijsman Butter', 'Buatan Tangan'],
   },
@@ -139,7 +139,7 @@ export default async function Products() {
             🎉 Promo Opening
           </p>
           <p style={{ color: '#fff', fontSize: '26px', fontWeight: 800, margin: '0 0 2px', lineHeight: '1.1' }}>
-            Diskon 30%
+            Diskon 20%
           </p>
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '12px', margin: 0 }}>
             untuk semua produk
@@ -154,7 +154,7 @@ export default async function Products() {
             flexShrink: 0,
           }}
         >
-          <p style={{ color: '#fff', fontSize: '28px', fontWeight: 900, margin: 0, lineHeight: 1 }}>30%</p>
+          <p style={{ color: '#fff', fontSize: '28px', fontWeight: 900, margin: 0, lineHeight: 1 }}>20%</p>
           <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '10px', fontWeight: 700, margin: '2px 0 0', letterSpacing: '1px' }}>OFF</p>
         </div>
       </div>
