@@ -60,11 +60,11 @@ export default function Testimonials() {
       {/* Section label */}
       <div style={{ padding: '36px 24px 20px' }}>
         <p style={{ color: '#C8820A', fontSize: '11px', fontWeight: 700, letterSpacing: '2.4px', textTransform: 'uppercase', margin: '0 0 8px' }}>
-          Kata Mereka
+          Testimoni
         </p>
         <h2 style={{ color: '#fff', fontSize: '24px', fontWeight: 800, lineHeight: 1.25, margin: 0 }}>
-          Bukan kami yang bilang.<br />
-          <em style={{ color: '#C8820A', fontStyle: 'italic' }}>Mereka yang buktiin.</em>
+          Kata mereka yang<br />
+          <em style={{ color: '#C8820A', fontStyle: 'italic' }}>udah pesan langsung.</em>
         </h2>
       </div>
 
