@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import FounderStory from '@/components/FounderStory'
 import Products from '@/components/Products'
+import HowToOrder from '@/components/HowToOrder'
 import SkipToProductsButton from '@/components/SkipToProductsButton'
 import FloatingWhatsApp from '@/components/FloatingWhatsApp'
 
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <FounderStory />
         <Products />
+        <HowToOrder />
       </main>
       <SkipToProductsButton />
       <FloatingWhatsApp />
