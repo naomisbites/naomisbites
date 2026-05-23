@@ -99,7 +99,7 @@ export default function HowToOrder() {
             <span style={{ display: 'block', fontSize: '10px', color: 'rgba(255,255,255,0.5)', textAlign: 'right', marginTop: '4px' }}>10:44 ✓✓</span>
           </div>
           <div style={{ alignSelf: 'flex-start', backgroundColor: '#1f2c34', color: '#fff', padding: '10px 14px', borderRadius: '18px 18px 18px 4px', maxWidth: '82%', fontSize: '13px', lineHeight: 1.5 }}>
-            Siap! Estimasi 2–3 hari sampai. Ditunggu ya 📦✨
+            Siap! Estimasi 1–3 hari sampai. Ditunggu ya 📦✨
             <span style={{ display: 'block', fontSize: '10px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>10:44</span>
           </div>
         </div>
