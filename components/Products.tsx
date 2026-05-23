@@ -10,7 +10,7 @@ const WA_PUTRI =
 const PRODUCT_META: Record<string, {
   image: string
   isNew: boolean
-  prices: { size: string; price: string; waLink: string }[]
+  prices: { size: string; originalPrice: string; discountedPrice: string; waLink: string }[]
   badges: string[]
 }> = {
   'kue-nastar': {
