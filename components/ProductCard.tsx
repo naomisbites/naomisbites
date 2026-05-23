@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 function WhatsAppIcon() {
   return (
@@ -73,15 +74,13 @@ export default function ProductCard({
 
       {/* Product photo + Hemat badge inside same relative container */}
       <div style={{ width: '100%', height: '260px', overflow: 'hidden', position: 'relative' }}>
-        <img
+        <Image
           src={image}
           alt={name}
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            objectPosition: 'center center',
-          }}
+          fill
+          style={{ objectFit: 'cover', objectPosition: 'center center' }}
+          sizes="(max-width: 430px) 100vw, 430px"
+          priority={false}
         />
         {/* "Hemat 30%" badge — bottom left of photo */}
         <div

@@ -14,7 +14,7 @@ const PRODUCT_META: Record<string, {
   badges: string[]
 }> = {
   'kue-nastar': {
-    image: '/images/nastar.png',
+    image: '/images/nastar.jpg',
     isNew: false,
     prices: [
       { size: '600ml', originalPrice: 'Rp 165.000', discountedPrice: 'Rp 132.000', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Nastar+600ml+%F0%9F%8D%AA' },
@@ -23,7 +23,7 @@ const PRODUCT_META: Record<string, {
     badges: ['Wijsman Butter', 'Nanas Asli', 'Buatan Tangan'],
   },
   'kue-putri-salju': {
-    image: '/images/putri-salju.png',
+    image: '/images/putri-salju.jpg',
     isNew: true,
     prices: [
       { size: '600ml', originalPrice: 'Rp 95.000',  discountedPrice: 'Rp 76.000', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Putri+Salju+600ml+%E2%9D%84%EF%B8%8F' },
