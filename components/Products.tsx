@@ -1,44 +1,49 @@
 import { supabase, type Product } from '@/lib/supabase'
+import ProductCard from '@/components/ProductCard'
 
 const WA_NASTAR =
   'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Nastar+%F0%9F%8D%AA'
 const WA_PUTRI =
   'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Putri+Salju+%E2%9D%84%EF%B8%8F'
 
-// Static product config — images + WA links keyed by slug
-const PRODUCT_META: Record<string, { image: string; waLink: string; isNew: boolean }> = {
-  'kue-nastar':     { image: '/images/nastar.jpg',      waLink: WA_NASTAR, isNew: false },
-  'kue-putri-salju':{ image: '/images/putri-salju.jpg', waLink: WA_PUTRI,  isNew: true  },
-}
-
-const FALLBACK_PRODUCTS = [
-  {
-    id: '1',
-    slug: 'kue-nastar',
-    name: 'Kue Nastar',
-    subtitle: 'Classic Pineapple Tart',
-    price: 75000,
+// Static product config — images, WA links, pricing tiers, and badges per slug
+const PRODUCT_META: Record<string, {
+  image: string
+  waLink: string
+  isNew: boolean
+  prices: { size: string; price: string }[]
+  badges: string[]
+}> = {
+  'kue-nastar': {
+    image: '/images/nastar.png',
+    waLink: WA_NASTAR,
+    isNew: false,
+    prices: [
+      { size: '600ml', price: 'Rp 165.000' },
+      { size: '800ml', price: 'Rp 185.000' },
+    ],
     badges: ['Wijsman Butter', 'Nanas Asli', 'Buatan Tangan'],
   },
-  {
-    id: '2',
-    slug: 'kue-putri-salju',
-    name: 'Kue Putri Salju',
-    subtitle: 'Snow White Cookies',
-    price: 70000,
+  'kue-putri-salju': {
+    image: '/images/putri-salju.png',
+    waLink: WA_PUTRI,
+    isNew: true,
+    prices: [
+      { size: '600ml', price: 'Rp 95.000' },
+      { size: '800ml', price: 'Rp 115.000' },
+    ],
     badges: ['Wijsman Butter', 'Buatan Tangan'],
   },
-]
+}
 
-function formatRupiah(amount: number) {
-  return new Intl.NumberFormat('id-ID', {
-    style: 'currency',
-    currency: 'IDR',
-    minimumFractionDigits: 0,
-  }).format(amount)
+const FALLBACK_SLUGS = ['kue-nastar', 'kue-putri-salju']
+const FALLBACK_NAMES: Record<string, { name: string; subtitle: string }> = {
+  'kue-nastar':     { name: 'Kue Nastar',      subtitle: 'Classic Pineapple Tart' },
+  'kue-putri-salju':{ name: 'Kue Putri Salju', subtitle: 'Snow White Cookies'     },
 }
 
 async function getProducts(): Promise<Product[]> {
+
   const { data, error } = await supabase
     .from('products')
     .select('*')
@@ -67,27 +72,27 @@ function WhatsAppIcon() {
 export default async function Products() {
   const dbProducts = await getProducts()
 
-  // Merge DB data with static meta, or use fallback
-  const products =
+  const slugs =
     dbProducts.length > 0
-      ? dbProducts.map((p) => ({
-          id: p.id,
-          slug: p.slug,
-          name: p.name,
-          subtitle: p.slug === 'kue-nastar' ? 'Classic Pineapple Tart' : 'Snow White Cookies',
-          price: p.price,
-          badges:
-            p.slug === 'kue-nastar'
-              ? ['Wijsman Butter', 'Nanas Asli', 'Buatan Tangan']
-              : ['Wijsman Butter', 'Buatan Tangan'],
-        }))
-      : FALLBACK_PRODUCTS
+      ? dbProducts.map((p) => p.slug)
+      : FALLBACK_SLUGS
+
+  const products = slugs.map((slug, i) => {
+    const db = dbProducts.find((p) => p.slug === slug)
+    const names = FALLBACK_NAMES[slug] ?? { name: slug, subtitle: '' }
+    return {
+      id: db?.id ?? String(i + 1),
+      slug,
+      name: db?.name ?? names.name,
+      subtitle: names.subtitle,
+    }
+  })
 
   return (
     <section
       id="products"
       style={{
-        backgroundColor: '#FAF7F2',
+        backgroundColor: '#1C355D',
         padding: '48px 24px 56px',
         fontFamily: 'var(--font-plus-jakarta)',
       }}
@@ -109,7 +114,7 @@ export default async function Products() {
       {/* Headline */}
       <h2
         style={{
-          color: '#1C355E',
+          color: '#ffffff',
           fontSize: '28px',
           fontWeight: 700,
           lineHeight: '1.2',
@@ -126,154 +131,21 @@ export default async function Products() {
             image: '/images/hero-bg-hq.jpg',
             waLink: WA_NASTAR,
             isNew: false,
+            prices: [],
+            badges: [],
           }
 
           return (
-            <div
+            <ProductCard
               key={product.id}
-              style={{
-                backgroundColor: '#fff',
-                borderRadius: '20px',
-                overflow: 'hidden',
-                boxShadow: '0 2px 16px rgba(28,53,94,0.08)',
-                position: 'relative',
-              }}
-            >
-              {/* "Baru" badge — only on new products */}
-              {meta.isNew && (
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '14px',
-                    right: '14px',
-                    zIndex: 2,
-                    backgroundColor: '#C8820A',
-                    color: '#fff',
-                    fontSize: '11px',
-                    fontWeight: 700,
-                    padding: '5px 12px',
-                    borderRadius: '20px',
-                    letterSpacing: '1px',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  ✦ Baru
-                </div>
-              )}
-
-              {/* Product photo */}
-              <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
-                <img
-                  src={meta.image}
-                  alt={product.name}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'center 30%',
-                  }}
-                />
-              </div>
-
-              {/* Card content */}
-              <div style={{ padding: '18px 20px 22px' }}>
-                {/* Name + price row */}
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'flex-start',
-                    marginBottom: '4px',
-                  }}
-                >
-                  <div>
-                    <h3
-                      style={{
-                        color: '#1C355E',
-                        fontSize: '20px',
-                        fontWeight: 700,
-                        margin: 0,
-                        lineHeight: '1.2',
-                      }}
-                    >
-                      {product.name}
-                    </h3>
-                    <p
-                      style={{
-                        color: '#6B7280',
-                        fontSize: '13px',
-                        margin: '3px 0 0',
-                        fontStyle: 'italic',
-                      }}
-                    >
-                      {product.subtitle}
-                    </p>
-                  </div>
-                  <span
-                    style={{
-                      color: '#C8820A',
-                      fontSize: '20px',
-                      fontWeight: 700,
-                      whiteSpace: 'nowrap',
-                      paddingTop: '2px',
-                    }}
-                  >
-                    {formatRupiah(product.price)}
-                  </span>
-                </div>
-
-                {/* Ingredient badges */}
-                <div
-                  style={{
-                    display: 'flex',
-                    gap: '6px',
-                    marginTop: '14px',
-                    marginBottom: '18px',
-                    flexWrap: 'wrap',
-                  }}
-                >
-                  {product.badges.map((b) => (
-                    <span
-                      key={b}
-                      style={{
-                        backgroundColor: '#EEF3FB',
-                        color: '#1C355E',
-                        fontSize: '11px',
-                        fontWeight: 600,
-                        padding: '4px 10px',
-                        borderRadius: '20px',
-                      }}
-                    >
-                      {b}
-                    </span>
-                  ))}
-                </div>
-
-                {/* WhatsApp CTA */}
-                <a
-                  href={meta.waLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '9px',
-                    backgroundColor: '#25D366',
-                    color: '#fff',
-                    padding: '15px',
-                    borderRadius: '12px',
-                    fontWeight: 700,
-                    fontSize: '15px',
-                    textDecoration: 'none',
-                    fontFamily: 'var(--font-plus-jakarta)',
-                  }}
-                >
-                  <WhatsAppIcon />
-                  Pesan via WhatsApp
-                </a>
-              </div>
-            </div>
+              name={product.name}
+              subtitle={product.subtitle}
+              image={meta.image}
+              waLink={meta.waLink}
+              isNew={meta.isNew}
+              prices={meta.prices}
+              badges={meta.badges}
+            />
           )
         })}
       </div>
@@ -281,7 +153,7 @@ export default async function Products() {
       {/* Footer note */}
       <p
         style={{
-          color: '#9CA3AF',
+          color: 'rgba(255,255,255,0.45)',
           fontSize: '11px',
           textAlign: 'center',
           marginTop: '22px',
