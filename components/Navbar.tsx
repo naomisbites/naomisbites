@@ -7,12 +7,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 z-50 flex items-center justify-between px-5"
-      style={{
-        left: 'max(0px, calc((100vw - 430px) / 2))',
-        width: 'min(100vw, 430px)',
-        height: '64px',
-      }}
+      className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-5"
+      style={{ height: '64px' }}
     >
       {/* Logo */}
       <img

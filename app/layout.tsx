@@ -19,6 +19,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   variable: '--font-plus-jakarta',
   weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
 })
 
 const siteUrl = 'https://naomisbites.vercel.app'
@@ -147,7 +148,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="text-navy font-body">
+      <body className="text-navy font-body" style={{ backgroundColor: '#FFFFFF' }}>
         {/* Constrain to mobile width — always shows the mobile layout regardless of screen size */}
         <div
           style={{
