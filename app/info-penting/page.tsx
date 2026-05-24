@@ -7,43 +7,45 @@ export const metadata = {
 
 const SECTIONS = [
   {
-    title: 'Pemesanan',
+    title: '📦 Produk Rusak atau Tidak Sesuai',
     items: [
-      'Semua pesanan dilakukan melalui WhatsApp.',
-      'Pesanan dianggap sah setelah konfirmasi dari Naomi.',
-      'Mohon pesan minimal 1 hari sebelumnya.',
+      'Kalau produk kamu sampai dalam kondisi rusak, pecah, atau tidak sesuai pesanan — segera hubungi Naomi maksimal 24 jam setelah paket diterima.',
+      'Kirimkan foto kondisi produk dan kemasan ke WhatsApp kami. Tanpa foto, klaim tidak bisa diproses.',
+      'Klaim yang valid akan diganti dengan produk baru di pengiriman berikutnya. Kami tidak mengembalikan uang (refund) untuk alasan selera atau perubahan pikiran.',
     ],
   },
   {
-    title: 'Pembayaran',
+    title: '💸 Refund',
     items: [
-      'Pembayaran dilakukan di muka (full payment) setelah pesanan dikonfirmasi.',
-      'Metode pembayaran: transfer bank atau dompet digital (GoPay, OVO, QRIS).',
-      'Pesanan baru diproses setelah pembayaran diterima.',
+      'Refund hanya berlaku jika: produk terbukti rusak saat diterima, atau pesanan tidak dapat kami penuhi karena keterbatasan stok.',
+      'Refund diproses dalam 1–3 hari kerja ke rekening atau dompet digital yang kamu daftarkan.',
+      'Kami tidak melayani refund untuk alasan: salah pesan, berubah pikiran, atau keterlambatan kurir di luar kendali kami.',
     ],
   },
   {
-    title: 'Pengiriman',
+    title: '🕐 Antrean Pesanan',
+    items: [
+      'Kami membatasi produksi agar kualitas tetap terjaga. Pesanan diproses sesuai urutan masuk.',
+      'Kalau slot hari ini sudah penuh, pesananmu otomatis masuk ke antrean hari berikutnya.',
+      'Naomi akan konfirmasi estimasi tanggal pengiriman setelah pesananmu masuk antrean.',
+      'Pesanan yang sudah dibayar tidak akan tergeser — posisimu aman.',
+    ],
+  },
+  {
+    title: '⚠️ Waspada Penipuan Transfer',
+    items: [
+      'Kami HANYA menerima pembayaran ke rekening resmi yang dikonfirmasi langsung oleh Naomi via WhatsApp.',
+      'Jangan transfer ke nomor rekening yang dikirim via SMS, email, atau akun Instagram tidak terverifikasi.',
+      'Jika ada yang mengatasnamakan Naomi\'s Bites dan meminta transfer tanpa konfirmasi chat WhatsApp resmi kami — itu penipuan.',
+      'Nomor WhatsApp resmi kami: +62 851-9082-5988. Tidak ada nomor lain.',
+    ],
+  },
+  {
+    title: '🚚 Pengiriman',
     items: [
       'Kami mengirim ke seluruh Indonesia via JNE, J&T, atau SiCepat.',
-      'Ongkos kirim ditanggung pembeli.',
-      'Kami tidak bertanggung jawab atas keterlambatan yang disebabkan oleh pihak kurir.',
-    ],
-  },
-  {
-    title: 'Produk',
-    items: [
-      'Semua produk dibuat fresh dengan bahan berkualitas.',
-      'Ketahanan produk: 2 minggu suhu ruangan, 1 bulan di kulkas.',
-      'Kami tidak menerima pengembalian produk kecuali ada kerusakan saat diterima.',
-    ],
-  },
-  {
-    title: 'Kerusakan Produk',
-    items: [
-      'Jika produk sampai dalam kondisi rusak, segera hubungi Naomi dalam 24 jam setelah diterima.',
-      'Sertakan foto kondisi produk dan kemasan untuk proses klaim.',
-      'Klaim yang diterima akan diproses dalam bentuk penggantian produk.',
+      'Ongkos kirim ditanggung pembeli dan dikonfirmasi sebelum pembayaran.',
+      'Setelah paket diserahkan ke kurir, keterlambatan di luar tanggung jawab kami — tapi kami siap bantu lacak paket kamu.',
     ],
   },
 ]
@@ -75,7 +77,7 @@ export default function InfoPenting() {
           Info Penting
         </h1>
         <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 13, marginTop: 8, marginBottom: 0 }}>
-          Hal-hal yang perlu kamu tahu sebelum pesan.
+          Soal kerusakan, refund, antrean, dan cara aman bertransaksi.
         </p>
       </div>
 
