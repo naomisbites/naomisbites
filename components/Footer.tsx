@@ -8,7 +8,7 @@ export default function Footer() {
           Naomi&apos;s Bites
         </p>
         <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: 12, margin: '0 0 24px' }}>
-          Rasa yang bikin kangen, dari dapur kecil kami di Bali.
+          Rasa yang selalu kamu rindukan, kini hadir dari dapur kami di Bali.
         </p>
 
         {/* Social icons */}
