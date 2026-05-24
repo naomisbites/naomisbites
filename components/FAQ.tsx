@@ -9,8 +9,8 @@ const FAQS = [
     a: '2 minggu dari tanggal produksi kalau disimpan di suhu ruangan. Masukkin kulkas, bisa sampai 1 bulan. Tapi jujur — biasanya habis duluan sebelum itu. 😄',
   },
   {
-    q: 'Cara pesannya gimana?',
-    a: 'Ketuk tombol WhatsApp di halaman ini, pilih produk dan ukurannya, terus kami konfirmasi langsung. Pembayaran via transfer BCA. Gampang banget.',
+    q: 'Ada pilihan rasa atau ukuran lain?',
+    a: 'Untuk sekarang kami fokus di Nastar dan Putri Salju dalam dua ukuran — 600ml dan 800ml. Kalau ada yang baru, kami umumin duluan di Instagram.',
   },
   {
     q: 'Kalau kuenya sampai pecah atau rusak, gimana?',
