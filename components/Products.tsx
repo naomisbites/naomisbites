@@ -10,7 +10,7 @@ const WA_PUTRI =
 const PRODUCT_META: Record<string, {
   image: string
   isNew: boolean
-  prices: { size: string; originalPrice: string; discountedPrice: string; waLink: string }[]
+  prices: { size: string; originalPrice: string; discountedPrice: string; waLink: string; soldOut?: boolean }[]
   badges: string[]
 }> = {
   'kue-nastar': {
@@ -26,7 +26,7 @@ const PRODUCT_META: Record<string, {
     image: '/images/putri-salju.jpg',
     isNew: true,
     prices: [
-      { size: '600ml', originalPrice: 'Rp 145.000', discountedPrice: 'Rp 116.000', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Putri+Salju+600ml+%E2%9D%84%EF%B8%8F' },
+      { size: '600ml', originalPrice: 'Rp 145.000', discountedPrice: 'Rp 116.000', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Putri+Salju+600ml+%E2%9D%84%EF%B8%8F', soldOut: true },
       { size: '800ml', originalPrice: 'Rp 165.000', discountedPrice: 'Rp 132.000', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Putri+Salju+800ml+%E2%9D%84%EF%B8%8F' },
     ],
     badges: ['Wijsman Butter', 'Buatan Tangan'],

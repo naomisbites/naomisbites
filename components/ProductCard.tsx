@@ -23,7 +23,7 @@ interface Props {
   subtitle: string
   image: string
   isNew: boolean
-  prices: { size: string; originalPrice: string; discountedPrice: string; waLink: string }[]
+  prices: { size: string; originalPrice: string; discountedPrice: string; waLink: string; soldOut?: boolean }[]
   badges: string[]
 }
 
@@ -35,10 +35,12 @@ export default function ProductCard({
   prices,
   badges,
 }: Props) {
-  const [selected, setSelected] = useState(0)
+  const firstAvailable = prices.findIndex((p) => !p.soldOut)
+  const [selected, setSelected] = useState(firstAvailable >= 0 ? firstAvailable : 0)
   const activeOriginal   = prices[selected]?.originalPrice   ?? ''
   const activeDiscounted = prices[selected]?.discountedPrice ?? ''
   const activeWaLink     = prices[selected]?.waLink          ?? ''
+  const activeSoldOut    = prices[selected]?.soldOut         ?? false
 
   return (
     <div
@@ -180,48 +182,90 @@ export default function ProductCard({
           {prices.map((tier, i) => (
             <button
               key={tier.size}
-              onClick={() => setSelected(i)}
+              onClick={() => !tier.soldOut && setSelected(i)}
+              disabled={tier.soldOut}
               style={{
                 padding: '7px 18px',
                 borderRadius: '20px',
-                border: `2px solid ${i === selected ? '#1C355E' : '#E5E7EB'}`,
-                backgroundColor: i === selected ? '#1C355E' : 'transparent',
-                color: i === selected ? '#fff' : '#6B7280',
+                border: tier.soldOut
+                  ? '2px solid #E5E7EB'
+                  : `2px solid ${i === selected ? '#1C355E' : '#E5E7EB'}`,
+                backgroundColor: tier.soldOut
+                  ? '#F3F4F6'
+                  : i === selected ? '#1C355E' : 'transparent',
+                color: tier.soldOut ? '#C4C8CF' : i === selected ? '#fff' : '#6B7280',
                 fontSize: '13px',
                 fontWeight: 600,
-                cursor: 'pointer',
+                cursor: tier.soldOut ? 'not-allowed' : 'pointer',
                 fontFamily: 'var(--font-plus-jakarta)',
                 transition: 'all 0.15s ease',
+                position: 'relative',
               }}
             >
-              {tier.size}
+              {tier.soldOut ? (
+                <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                  <span style={{ textDecoration: 'line-through' }}>{tier.size}</span>
+                  <span style={{
+                    fontSize: '10px',
+                    fontWeight: 700,
+                    letterSpacing: '0.5px',
+                    color: '#E8392A',
+                    textDecoration: 'none',
+                  }}>
+                    Habis
+                  </span>
+                </span>
+              ) : (
+                tier.size
+              )}
             </button>
           ))}
         </div>
 
         {/* WhatsApp CTA */}
-        <a
-          href={activeWaLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '9px',
-            backgroundColor: '#25D366',
-            color: '#fff',
-            padding: '15px',
-            borderRadius: '12px',
-            fontWeight: 700,
-            fontSize: '15px',
-            textDecoration: 'none',
-            fontFamily: 'var(--font-plus-jakarta)',
-          }}
-        >
-          <WhatsAppIcon />
-          Pesan via WhatsApp
-        </a>
+        {activeSoldOut ? (
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '9px',
+              backgroundColor: '#E5E7EB',
+              color: '#9CA3AF',
+              padding: '15px',
+              borderRadius: '12px',
+              fontWeight: 700,
+              fontSize: '15px',
+              fontFamily: 'var(--font-plus-jakarta)',
+              cursor: 'not-allowed',
+            }}
+          >
+            Varian ini sedang habis
+          </div>
+        ) : (
+          <a
+            href={activeWaLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '9px',
+              backgroundColor: '#25D366',
+              color: '#fff',
+              padding: '15px',
+              borderRadius: '12px',
+              fontWeight: 700,
+              fontSize: '15px',
+              textDecoration: 'none',
+              fontFamily: 'var(--font-plus-jakarta)',
+            }}
+          >
+            <WhatsAppIcon />
+            Pesan via WhatsApp
+          </a>
+        )}
       </div>
     </div>
   )
