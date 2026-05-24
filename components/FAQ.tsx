@@ -31,47 +31,47 @@ export default function FAQ() {
       style={{ backgroundColor: '#F3F8FF', fontFamily: 'var(--font-plus-jakarta)' }}
     >
       <div style={{ padding: '48px 24px 0' }}>
-        {/* Header row: text left, image right */}
-        <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start', marginBottom: 32 }}>
-          <div style={{ flex: 1 }}>
-            <p style={{
-              color: '#C8820A',
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: '2.4px',
-              textTransform: 'uppercase',
-              margin: '0 0 8px',
-            }}>
-              FAQ
-            </p>
-            <h2 style={{
-              color: '#1C355D',
-              fontSize: 22,
-              fontWeight: 800,
-              lineHeight: 1.25,
-              margin: 0,
-            }}>
-              Ada yang<br />
-              mau kamu<br />
-              <em style={{ color: '#C8820A' }}>tanyain?</em>
-            </h2>
-          </div>
-          <div style={{
-            width: 120,
-            height: 150,
-            position: 'relative',
-            borderRadius: 12,
-            overflow: 'hidden',
-            flexShrink: 0,
+        {/* Header */}
+        <div style={{ marginBottom: 24 }}>
+          <p style={{
+            color: '#C8820A',
+            fontSize: 11,
+            fontWeight: 700,
+            letterSpacing: '2.4px',
+            textTransform: 'uppercase',
+            margin: '0 0 8px',
           }}>
-            <Image
-              src="/images/nastar.jpg"
-              alt="Naomi's Bites kue nastar"
-              fill
-              style={{ objectFit: 'cover' }}
-              sizes="120px"
-            />
-          </div>
+            FAQ
+          </p>
+          <h2 style={{
+            color: '#1C355D',
+            fontSize: 22,
+            fontWeight: 800,
+            lineHeight: 1.25,
+            margin: 0,
+          }}>
+            Ada yang<br />
+            mau kamu<br />
+            <em style={{ color: '#C8820A' }}>tanyain?</em>
+          </h2>
+        </div>
+
+        {/* Image — 3:4 aspect ratio */}
+        <div style={{
+          position: 'relative',
+          width: '100%',
+          aspectRatio: '3 / 4',
+          borderRadius: 16,
+          overflow: 'hidden',
+          marginBottom: 32,
+        }}>
+          <Image
+            src="/images/nastar.jpg"
+            alt="Naomi's Bites kue nastar"
+            fill
+            style={{ objectFit: 'cover' }}
+            sizes="(max-width: 430px) 100vw, 430px"
+          />
         </div>
 
         {/* Accordions */}
