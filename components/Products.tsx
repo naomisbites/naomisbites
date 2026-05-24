@@ -17,7 +17,7 @@ const PRODUCT_META: Record<string, {
     image: '/images/nastar.jpg',
     isNew: false,
     prices: [
-      { size: '600ml', originalPrice: 'Rp 165.000', discountedPrice: 'Rp 132.000', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Nastar+600ml+%F0%9F%8D%AA' },
+      { size: '600ml', originalPrice: 'Rp 165.000', discountedPrice: 'Rp 132.000', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Nastar+600ml+%F0%9F%8D%AA', soldOut: true },
       { size: '800ml', originalPrice: 'Rp 185.000', discountedPrice: 'Rp 148.000', waLink: 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+Kue+Nastar+800ml+%F0%9F%8D%AA' },
     ],
     badges: ['Wijsman Butter', 'Nanas Asli', 'Buatan Tangan'],
