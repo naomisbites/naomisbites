@@ -1,6 +1,3 @@
-const WA_LINK =
-  'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+tanya-tanya+soal+kue+%F0%9F%98%8A'
-
 export default function Hero() {
   return (
     <section
@@ -54,9 +51,7 @@ export default function Hero() {
         {/* CTA Button */}
         <div className="flex justify-center">
           <a
-            href={WA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#products"
             className="flex items-center justify-center gap-2 font-bold text-[17px] rounded-[10px] transition-opacity hover:opacity-90 active:opacity-80"
             style={{
               width: '255px',
