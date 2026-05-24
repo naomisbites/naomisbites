@@ -3,9 +3,9 @@ export default function Hero() {
     <section
       className="relative w-full overflow-hidden"
       style={{
-        height: '100svh',
-        minHeight: '700px',
-        maxHeight: '900px',
+        height: '75svh',
+        minHeight: '520px',
+        maxHeight: '720px',
         backgroundImage: 'url(/images/hero-bg-hq.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
