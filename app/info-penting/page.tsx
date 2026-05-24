@@ -98,7 +98,7 @@ export default function InfoPenting() {
         <div style={{ backgroundColor: '#F3F8FF', borderRadius: 16, padding: '20px 20px' }}>
           <p style={{ color: '#1C355D', fontSize: 14, fontWeight: 700, margin: '0 0 6px' }}>Ada pertanyaan?</p>
           <p style={{ color: '#6B7280', fontSize: 13, lineHeight: 1.6, margin: '0 0 16px' }}>
-            Langsung chat Naomi, lebih cepat dan lebih personal.
+            Langsung chat Naomi, lebih cepat dan lebih personal. Atau mau curhat juga yaudah naomi dengerin wkwk
           </p>
           <a
             href="https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+tanya+soal+info+penting+%F0%9F%98%8A"
