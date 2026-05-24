@@ -155,7 +155,7 @@ export default function RootLayout({
             maxWidth: '430px',
             margin: '0 auto',
             minHeight: '100vh',
-            backgroundColor: '#FAF7F2',
+            backgroundColor: '#FFFFFF',
             position: 'relative',
           }}
         >

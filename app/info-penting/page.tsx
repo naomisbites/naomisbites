@@ -47,7 +47,7 @@ const SECTIONS = [
 
 export default function InfoPenting() {
   return (
-    <main style={{ backgroundColor: '#FAF7F2', minHeight: '100svh', fontFamily: 'var(--font-plus-jakarta)' }}>
+    <main style={{ backgroundColor: '#FFFFFF', minHeight: '100svh', fontFamily: 'var(--font-plus-jakarta)' }}>
 
       {/* Header */}
       <div style={{ backgroundColor: '#1C355D', padding: '56px 24px 40px' }}>
