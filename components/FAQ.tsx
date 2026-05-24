@@ -1,7 +1,15 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
+
+const CAROUSEL_IMAGES = [
+  '/images/Instagram post - 15.jpg',
+  '/images/Instagram post - 16.jpg',
+  '/images/Instagram post - 18.jpg',
+  '/images/Instagram post - 11.jpg',
+  '/images/Instagram post - 13.jpg',
+]
 
 const FAQS = [
   {
@@ -24,6 +32,14 @@ const FAQS = [
 
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null)
+  const [activeSlide, setActiveSlide] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide(prev => (prev + 1) % CAROUSEL_IMAGES.length)
+    }, 2500)
+    return () => clearInterval(timer)
+  }, [])
 
   return (
     <section
@@ -111,22 +127,34 @@ export default function FAQ() {
           ))}
         </div>
 
-        {/* Image — 3:4 aspect ratio, below last question */}
+        {/* Image carousel — 4:5, crossfade every 2.5s */}
         <div style={{
           position: 'relative',
           width: '100%',
           aspectRatio: '4 / 5',
           borderRadius: 16,
           overflow: 'hidden',
-          marginBottom: 0,
         }}>
-          <Image
-            src="/images/nastar.jpg"
-            alt="Naomi's Bites kue nastar"
-            fill
-            style={{ objectFit: 'cover' }}
-            sizes="(max-width: 430px) 100vw, 430px"
-          />
+          {CAROUSEL_IMAGES.map((src, i) => (
+            <div
+              key={src}
+              style={{
+                position: 'absolute',
+                inset: 0,
+                opacity: i === activeSlide ? 1 : 0,
+                transition: 'opacity 0.7s ease-in-out',
+              }}
+            >
+              <Image
+                src={src}
+                alt={`Naomi's Bites kue ${i + 1}`}
+                fill
+                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 430px) 100vw, 430px"
+                priority={i === 0}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
