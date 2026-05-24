@@ -209,29 +209,6 @@ export default function Testimonials() {
           ›
         </button>
 
-        {/* Mute toggle */}
-        <button
-          onClick={toggleMute}
-          style={{
-            position: 'absolute',
-            bottom: '20px',
-            right: '16px',
-            zIndex: 10,
-            backgroundColor: 'rgba(0,0,0,0.5)',
-            border: 'none',
-            borderRadius: '50%',
-            width: '36px',
-            height: '36px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            fontSize: '16px',
-          }}
-          aria-label={muted ? 'Unmute' : 'Mute'}
-        >
-          {muted ? '🔇' : '🔊'}
-        </button>
 
         {/* Story counter */}
         <div style={{
