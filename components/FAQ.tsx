@@ -4,11 +4,26 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 const CAROUSEL_IMAGES = [
-  '/images/Instagram post - 15.jpg',
-  '/images/Instagram post - 16.jpg',
-  '/images/Instagram post - 18.jpg',
-  '/images/Instagram post - 11.jpg',
-  '/images/Instagram post - 13.jpg',
+  {
+    src: '/images/Instagram post - 15.jpg',
+    alt: 'Perempuan berkacamata memegang toples Kue Nastar Naomi\'s Bites dengan teks "Beli Nastar nggak harus nunggu Lebaran"',
+  },
+  {
+    src: '/images/Instagram post - 16.jpg',
+    alt: 'Dua tangan saling menitipkan toples Kue Nastar Naomi\'s Bites dengan teks "Titip Rasa Titip Cerita"',
+  },
+  {
+    src: '/images/Instagram post - 18.jpg',
+    alt: 'Tangan memegang empat toples Kue Nastar Naomi\'s Bites dengan teks "Beli satu? Mana cukup."',
+  },
+  {
+    src: '/images/Instagram post - 11.jpg',
+    alt: 'Dua orang tersenyum masing-masing memegang toples Kue Nastar Naomi\'s Bites',
+  },
+  {
+    src: '/images/Instagram post - 13.jpg',
+    alt: 'Tiga teman tersenyum di luar ruangan, masing-masing memegang toples Kue Nastar Naomi\'s Bites',
+  },
 ]
 
 const FAQS = [
@@ -134,9 +149,9 @@ export default function FAQ() {
           borderRadius: 16,
           overflow: 'hidden',
         }}>
-          {CAROUSEL_IMAGES.map((src, i) => (
+          {CAROUSEL_IMAGES.map((image, i) => (
             <div
-              key={src}
+              key={image.src}
               style={{
                 position: 'absolute',
                 inset: 0,
@@ -145,8 +160,8 @@ export default function FAQ() {
               }}
             >
               <Image
-                src={src}
-                alt={`Naomi's Bites kue ${i + 1}`}
+                src={image.src}
+                alt={image.alt}
                 fill
                 style={{ objectFit: 'cover' }}
                 sizes="(max-width: 430px) 100vw, 430px"

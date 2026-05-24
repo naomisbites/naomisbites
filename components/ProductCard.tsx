@@ -76,7 +76,7 @@ export default function ProductCard({
       <div style={{ width: '100%', height: '260px', overflow: 'hidden', position: 'relative' }}>
         <Image
           src={image}
-          alt={name}
+          alt={`${name} Naomi's Bites — kue kering homemade dari Bali dalam toples kaca`}
           fill
           style={{ objectFit: 'cover', objectPosition: 'center center' }}
           sizes="(max-width: 430px) 100vw, 430px"
