@@ -22,14 +22,11 @@ export default function Navbar() {
     <>
       {/* Navbar bar — fixed, constrained to 430px content column */}
       <nav
-        className="fixed top-0 flex items-center justify-between px-5"
+        className="absolute top-0 flex items-center justify-between px-5"
         style={{
           height: '64px',
           zIndex: 60,
           width: '100%',
-          maxWidth: '430px',
-          left: '50%',
-          transform: 'translateX(-50%)',
         }}
       >
         {/* Logo */}
