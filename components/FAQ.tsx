@@ -115,7 +115,7 @@ export default function FAQ() {
         <div style={{
           position: 'relative',
           width: '100%',
-          aspectRatio: '3 / 4',
+          aspectRatio: '4 / 5',
           borderRadius: 16,
           overflow: 'hidden',
           marginBottom: 0,
