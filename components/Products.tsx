@@ -124,7 +124,7 @@ export default async function Products() {
       {/* Promo Opening Banner */}
       <div
         style={{
-          background: 'linear-gradient(135deg, #C8820A 0%, #E8A020 100%)',
+          background: '#E8392A',
           borderRadius: '16px',
           padding: '18px 20px',
           marginBottom: '28px',
