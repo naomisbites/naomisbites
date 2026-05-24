@@ -61,14 +61,13 @@ export default function FAQ() {
           </p>
           <h2 style={{
             color: '#1C355D',
-            fontSize: 22,
+            fontSize: 24,
             fontWeight: 800,
-            lineHeight: 1.25,
+            lineHeight: 1.2,
             margin: 0,
+            whiteSpace: 'nowrap',
           }}>
-            Ada yang<br />
-            mau kamu<br />
-            <em style={{ color: '#C8820A' }}>tanyain?</em>
+            Ada yang mau kamu <em style={{ color: '#C8820A' }}>tanyain?</em>
           </h2>
         </div>
 
