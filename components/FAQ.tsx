@@ -28,7 +28,7 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      style={{ backgroundColor: '#FAF7F2', fontFamily: 'var(--font-plus-jakarta)' }}
+      style={{ backgroundColor: '#F3F8FF', fontFamily: 'var(--font-plus-jakarta)' }}
     >
       <div style={{ padding: '48px 24px 0' }}>
         {/* Header row: text left, image right */}
