@@ -67,15 +67,11 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Full-screen overlay — constrained to 430px content column */}
+      {/* Full-screen overlay — covers full viewport, slides in from right */}
       <div
         style={{
           position: 'fixed',
-          top: 0,
-          bottom: 0,
-          left: '50%',
-          width: '100%',
-          maxWidth: '430px',
+          inset: 0,
           zIndex: 50,
           backgroundColor: '#1C355D',
           display: 'flex',
@@ -83,7 +79,7 @@ export default function Navbar() {
           alignItems: 'center',
           justifyContent: 'center',
           fontFamily: 'var(--font-plus-jakarta)',
-          transform: menuOpen ? 'translateX(-50%)' : 'translateX(50%)',
+          transform: menuOpen ? 'translateX(0)' : 'translateX(100vw)',
           transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
           pointerEvents: menuOpen ? 'auto' : 'none',
         }}
