@@ -20,10 +20,17 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Navbar bar — fixed so the burger is always reachable */}
+      {/* Navbar bar — fixed, constrained to 430px content column */}
       <nav
-        className="fixed top-0 left-0 right-0 flex items-center justify-between px-5"
-        style={{ height: '64px', zIndex: 60 }}
+        className="fixed top-0 flex items-center justify-between px-5"
+        style={{
+          height: '64px',
+          zIndex: 60,
+          width: '100%',
+          maxWidth: '430px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+        }}
       >
         {/* Logo */}
         <img
@@ -60,11 +67,15 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Full-screen overlay */}
+      {/* Full-screen overlay — constrained to 430px content column */}
       <div
         style={{
           position: 'fixed',
-          inset: 0,
+          top: 0,
+          bottom: 0,
+          left: '50%',
+          width: '100%',
+          maxWidth: '430px',
           zIndex: 50,
           backgroundColor: '#1C355D',
           display: 'flex',
@@ -72,7 +83,7 @@ export default function Navbar() {
           alignItems: 'center',
           justifyContent: 'center',
           fontFamily: 'var(--font-plus-jakarta)',
-          transform: menuOpen ? 'translateX(0)' : 'translateX(100%)',
+          transform: menuOpen ? 'translateX(-50%)' : 'translateX(50%)',
           transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
           pointerEvents: menuOpen ? 'auto' : 'none',
         }}
