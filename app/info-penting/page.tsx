@@ -7,46 +7,40 @@ export const metadata = {
 
 const SECTIONS = [
   {
-    title: '📦 Produk Rusak atau Tidak Sesuai',
+    title: '📦 Produk Rusak',
     items: [
-      'Kalau kuenya sampai dalam kondisi rusak atau pecah, langsung WA Naomi ya — paling lama 24 jam setelah paket kamu terima.',
-      'Foto dulu kondisi produk dan kemasannya sebelum chat, biar bisa kami proses dengan cepat.',
-      'Kalau memang rusak dari pengiriman, kami ganti di order berikutnya. Tapi kalau alasannya nggak cocok rasanya atau salah pesan sendiri — itu di luar yang bisa kami bantu, ya. Mohon maklum.',
+      'Kuenya sampai rusak atau pecah? WA Naomi dalam 24 jam ya, sertakan foto produk dan kemasannya.',
+      'Kalau memang rusak dari pengiriman, kami ganti di order berikutnya.',
     ],
   },
   {
     title: '💸 Refund',
     items: [
-      'Kami kembalikan uangmu kalau produknya rusak saat sampai, atau ternyata kami nggak bisa penuhi pesananmu.',
-      'Prosesnya biasanya 1–3 hari kerja — tapi ini juga bergantung antrean, dan Naomi akan selalu kasih tahu sebelum kamu bayar.',
-      'Refund untuk alasan berubah pikiran atau salah pesan — maaf, itu nggak bisa kami proses ya.',
+      'Uang dikembalikan hanya kalau produknya rusak saat sampai, atau kami ternyata nggak bisa penuhi pesananmu.',
+      'Refund karena berubah pikiran atau salah pesan — maaf, nggak bisa kami proses ya.',
     ],
   },
   {
-    title: '🕐 Antrean Pesanan',
+    title: '🕐 Antrean & Jadwal',
     items: [
-      'Kami batasi produksi biar kualitasnya tetap terjaga. Jadi semua pesanan masuk antrean sesuai urutan.',
-      'Kalau slot hari ini sudah penuh, pesananmu otomatis masuk ke hari berikutnya.',
-      'Kami biasanya bisa proses dalam 1–3 hari kerja — tapi ini tergantung antrean yang lagi jalan.',
-      'Naomi akan selalu konfirmasi dulu estimasi tanggalnya sebelum kamu transfer. Jadi kamu tahu persis kapan kuenya tiba.',
-      'Begitu sudah bayar, posisimu di antrean aman dan nggak akan tergeser.',
+      'Produksi kami batasi biar kualitas tetap terjaga, jadi semua pesanan masuk antrean.',
+      'Naomi akan konfirmasi estimasi tanggal dan ongkir dulu sebelum kamu transfer — nggak ada kejutan.',
+      'Begitu sudah bayar, posisi antreanmu aman.',
     ],
   },
   {
-    title: '⚠️ Waspada Penipuan Transfer',
+    title: '⚠️ Waspada Penipuan',
     items: [
-      'Kami cuma nerima bayar lewat transfer BCA 0212991706 a/n Celly Novanda. Itu satu-satunya rekening kami.',
-      'Sebelum transfer, pastiin dulu nomor rekeningnya lewat chat WhatsApp Naomi langsung ya. Jangan percaya rekening yang datang dari SMS, email, atau DM Instagram.',
-      'Ada yang ngaku-ngaku Naomi\'s Bites tapi kasih nomor rekening beda? Itu penipu. Abaikan dan langsung kabarin kami.',
-      'WhatsApp resmi kami: +62 851-9082-5988. Nggak ada nomor lain.',
+      'Satu-satunya rekening kami: BCA 0212991706 a/n Celly Novanda.',
+      'Selalu konfirmasi nomor rekening lewat WhatsApp Naomi langsung sebelum transfer. Jangan percaya rekening yang datang dari SMS, email, atau DM Instagram.',
+      'WhatsApp resmi: +62 851-9082-5988. Nggak ada nomor lain.',
     ],
   },
   {
     title: '🚚 Pengiriman',
     items: [
-      'Kami kirim ke seluruh Indonesia via JNE, J&T, atau SiCepat.',
-      'Ongkir ditanggung pembeli dan akan dikonfirmasi Naomi sebelum kamu bayar — jadi nggak ada kejutan.',
-      'Begitu paket sudah di tangan kurir, keterlambatan ada di luar kendali kami. Tapi kalau ada masalah, chat Naomi dan kami bantu lacak bareng.',
+      'Kami kirim ke seluruh Indonesia via JNE, J&T, atau SiCepat. Ongkir ditanggung pembeli.',
+      'Keterlambatan dari kurir di luar kendali kami — tapi kalau ada masalah, chat Naomi dan kami bantu lacak.',
     ],
   },
 ]
