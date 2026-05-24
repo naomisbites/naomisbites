@@ -27,7 +27,8 @@ const SECTIONS = [
     items: [
       'Kami membatasi produksi agar kualitas tetap terjaga. Pesanan diproses sesuai urutan masuk.',
       'Kalau slot hari ini sudah penuh, pesananmu otomatis masuk ke antrean hari berikutnya.',
-      'Naomi akan konfirmasi estimasi tanggal pengiriman setelah pesananmu masuk antrean.',
+      'Meskipun kami biasanya bisa memproses dalam 1–3 hari kerja, jadwal ini tetap bergantung pada antrean yang sedang berjalan.',
+      'Naomi akan selalu konfirmasi estimasi tanggal pengiriman dan posisi antreanmu sebelum kamu melakukan pembayaran — jadi kamu tahu persis kapan kuenya tiba.',
       'Pesanan yang sudah dibayar tidak akan tergeser — posisimu aman.',
     ],
   },
