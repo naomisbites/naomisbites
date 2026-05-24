@@ -10,7 +10,7 @@ const SECTIONS = [
     title: '📦 Produk Rusak',
     items: [
       'Kuenya sampai rusak atau pecah? WA Naomi dalam 24 jam ya, sertakan foto produk dan kemasannya.',
-      'Kalau memang rusak dari pengiriman, kami ganti di order berikutnya.',
+      'Kalau memang rusak dari pengirimannya, Naomi bakal langsung hubungi kamu buat cari solusinya bareng.',
     ],
   },
   {
