@@ -135,9 +135,23 @@ export default async function Products() {
         }}
       >
         <div>
-          <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', margin: '0 0 4px' }}>
-            🎉 Promo Opening
-          </p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
+            <span style={{
+              backgroundColor: '#fff',
+              color: '#E8392A',
+              fontSize: '9px',
+              fontWeight: 800,
+              letterSpacing: '1.5px',
+              textTransform: 'uppercase',
+              padding: '2px 7px',
+              borderRadius: '999px',
+            }}>
+              Opening
+            </span>
+            <span style={{ color: 'rgba(255,255,255,0.85)', fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' }}>
+              Promo
+            </span>
+          </div>
           <p style={{ color: '#fff', fontSize: '26px', fontWeight: 800, margin: '0 0 2px', lineHeight: '1.1' }}>
             Diskon 20%
           </p>
