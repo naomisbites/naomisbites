@@ -5,11 +5,11 @@ import { useState } from 'react'
 const WA_LINK = 'https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+pesan+kue+%F0%9F%98%8A'
 
 const NAV_ITEMS = [
-  { label: 'Produk',       href: '#products' },
-  { label: 'Cerita Naomi', href: '#founder-story' },
-  { label: 'Cara Pesan',   href: '#cara-pesan' },
-  { label: 'Testimoni',    href: '#testimonials' },
-  { label: 'FAQ',          href: '#faq' },
+  { label: 'Produk',       href: '/produk' },
+  { label: 'Cerita Naomi', href: '/cerita-naomi' },
+  { label: 'Cara Pesan',   href: '/cara-pesan' },
+  { label: 'Testimoni',    href: '/testimoni' },
+  { label: 'FAQ',          href: '/faq' },
   { label: 'Info Penting', href: '/info-penting' },
 ]
 
