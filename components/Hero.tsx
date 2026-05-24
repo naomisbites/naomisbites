@@ -35,23 +35,20 @@ export default function Hero() {
       {/* Text + CTA — anchored to bottom */}
       <div className="absolute inset-x-0 bottom-0 z-10 pb-10 px-8">
 
-        {/* Headline — maxWidth 320px matches Figma line breaks exactly */}
+        {/* H1 — product clarity for ads + SEO */}
         <h1
-          className="text-white text-center text-[25px] leading-[34px] font-medium mb-4 mx-auto"
-          style={{ fontFamily: 'var(--font-plus-jakarta)', maxWidth: '320px' }}
+          className="text-white text-center font-bold mb-3 mx-auto"
+          style={{ fontFamily: 'var(--font-plus-jakarta)', fontSize: '26px', lineHeight: '32px', maxWidth: '320px' }}
         >
-          Rasa yang selalu kamu rindukan,{' '}
-          kini hadir dari dapur kami di{' '}
-          <span className="font-bold">Bali.</span>
+          Kue Nastar &amp; Putri Salju Homemade dari Bali
         </h1>
 
-        {/* Body — maxWidth 310px matches Figma line break after "asli." */}
+        {/* Emotional subline */}
         <p
-          className="text-white/80 text-center text-[15px] leading-[22px] font-normal mb-8 mx-auto"
-          style={{ fontFamily: 'var(--font-plus-jakarta)', maxWidth: '310px' }}
+          className="text-white/75 text-center font-normal mb-8 mx-auto"
+          style={{ fontFamily: 'var(--font-plus-jakarta)', fontSize: '15px', lineHeight: '22px', maxWidth: '300px' }}
         >
-          Dibuat dari Wijsman butter dan nanas asli.{' '}
-          Dikirim ke seluruh Indonesia.
+          Rasa yang selalu kamu rindukan, kini hadir dari dapur kami di Bali.
         </p>
 
         {/* CTA Button */}
