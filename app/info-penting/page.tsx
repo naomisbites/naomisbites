@@ -35,9 +35,9 @@ const SECTIONS = [
   {
     title: '⚠️ Waspada Penipuan Transfer',
     items: [
-      'Kami HANYA menerima pembayaran ke rekening resmi yang dikonfirmasi langsung oleh Naomi via WhatsApp.',
-      'Jangan transfer ke nomor rekening yang dikirim via SMS, email, atau akun Instagram tidak terverifikasi.',
-      'Jika ada yang mengatasnamakan Naomi\'s Bites dan meminta transfer tanpa konfirmasi chat WhatsApp resmi kami — itu penipuan.',
+      'Kami HANYA menerima pembayaran via transfer BCA. Rekening resmi kami: BCA 0212991706 a/n Celly Novanda.',
+      'Selalu verifikasi nomor rekening ini langsung dengan Naomi via WhatsApp sebelum transfer — jangan percaya rekening yang dikirim lewat SMS, email, atau DM Instagram.',
+      'Jika ada yang mengatasnamakan Naomi\'s Bites dan memberikan nomor rekening berbeda — itu penipuan. Segera abaikan dan laporkan ke kami.',
       'Nomor WhatsApp resmi kami: +62 851-9082-5988. Tidak ada nomor lain.',
     ],
   },
