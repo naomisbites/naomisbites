@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
+import PromoBanner from '@/components/PromoBanner'
 import FounderStory from '@/components/FounderStory'
 import Products from '@/components/Products'
 import HowToOrder from '@/components/HowToOrder'
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <PromoBanner />
         <Products />
         <FounderStory />
         <HowToOrder />
