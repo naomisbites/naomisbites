@@ -19,7 +19,7 @@ export default function FounderStory() {
           marginBottom: '8px',
         }}
       >
-        Nota dari Founder
+        Cerita Naomi
       </p>
 
       {/* Headline — width 295px matches Figma exactly for correct line breaks */}
