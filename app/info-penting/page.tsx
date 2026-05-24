@@ -1,8 +1,18 @@
 import Link from 'next/link'
 
-export const metadata = {
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
   title: 'Info Penting — Naomi\'s Bites',
-  description: 'Hal-hal penting yang perlu kamu tahu sebelum memesan dari Naomi\'s Bites.',
+  description: 'Soal produk rusak, refund, antrean, cara aman bertransaksi, dan pengiriman. Baca sebelum pesan supaya nggak ada yang kurang jelas.',
+  alternates: {
+    canonical: 'https://naomisbites.vercel.app/info-penting',
+  },
+  openGraph: {
+    title: 'Info Penting — Naomi\'s Bites',
+    description: 'Soal produk rusak, refund, antrean, cara aman bertransaksi, dan pengiriman.',
+    url: 'https://naomisbites.vercel.app/info-penting',
+  },
 }
 
 const SECTIONS = [
