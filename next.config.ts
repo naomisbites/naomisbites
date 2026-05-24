@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const isDev = process.env.NODE_ENV === 'development'
+
 const securityHeaders = [
   // Prevent browsers from guessing content type — stops MIME-type sniffing attacks
   { key: 'X-Content-Type-Options', value: 'nosniff' },
@@ -24,8 +26,8 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: [
       "default-src 'self'",
-      // Next.js needs unsafe-inline for hydration scripts; unsafe-eval for dev HMR
-      "script-src 'self' 'unsafe-inline'",
+      // Next.js needs unsafe-inline for hydration; unsafe-eval only in dev (React debugging)
+      `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''}`,
       // Inline styles are used throughout; Google Fonts for typography
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       // Google Fonts font files
