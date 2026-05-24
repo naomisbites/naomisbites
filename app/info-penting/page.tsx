@@ -95,7 +95,7 @@ export default function InfoPenting() {
         ))}
 
         {/* Contact */}
-        <div style={{ backgroundColor: '#F3F8FF', borderRadius: 16, padding: '20px 20px' }}>
+        <div style={{ backgroundColor: '#F3F8FF', borderRadius: 16, padding: '20px 20px', marginBottom: 16 }}>
           <p style={{ color: '#1C355D', fontSize: 14, fontWeight: 700, margin: '0 0 6px' }}>Ada pertanyaan?</p>
           <p style={{ color: '#6B7280', fontSize: 13, lineHeight: 1.6, margin: '0 0 16px' }}>
             Langsung chat Naomi, lebih cepat dan lebih personal. Atau mau curhat juga yaudah naomi dengerin wkwk
@@ -118,6 +118,35 @@ export default function InfoPenting() {
             }}
           >
             Chat Naomi
+          </a>
+        </div>
+
+        {/* Back to products */}
+        <div style={{ backgroundColor: '#1C355D', borderRadius: 16, padding: '20px 20px' }}>
+          <p style={{ color: '#fff', fontSize: 14, fontWeight: 700, margin: '0 0 6px' }}>Siap order?</p>
+          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 13, lineHeight: 1.6, margin: '0 0 16px' }}>
+            Nastar & putri salju homemade, dibuat dari Wijsman butter dan nanas asli. Langsung lihat produknya.
+          </p>
+          <a
+            href="/#products"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 8,
+              backgroundColor: '#0049FF',
+              color: '#fff',
+              fontSize: 13,
+              fontWeight: 700,
+              padding: '10px 20px',
+              borderRadius: 50,
+              textDecoration: 'none',
+            }}
+          >
+            Lihat Produk
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </a>
         </div>
       </div>
