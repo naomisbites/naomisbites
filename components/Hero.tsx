@@ -37,16 +37,16 @@ export default function Hero() {
 
         {/* H1 — product clarity for ads + SEO */}
         <h1
-          className="text-white text-center font-bold mb-3 mx-auto"
-          style={{ fontFamily: 'var(--font-plus-jakarta)', fontSize: '26px', lineHeight: '32px', maxWidth: '320px' }}
+          className="text-white text-center font-bold mx-auto"
+          style={{ fontFamily: 'var(--font-plus-jakarta)', fontSize: '26px', lineHeight: '32px', maxWidth: '320px', marginBottom: '16px' }}
         >
           Kue Nastar &amp; Putri Salju Homemade dari Bali
         </h1>
 
         {/* Emotional subline */}
         <p
-          className="text-white/75 text-center font-normal mb-8 mx-auto"
-          style={{ fontFamily: 'var(--font-plus-jakarta)', fontSize: '15px', lineHeight: '22px', maxWidth: '300px' }}
+          className="text-white/75 text-center font-normal mx-auto"
+          style={{ fontFamily: 'var(--font-plus-jakarta)', fontSize: '15px', lineHeight: '22px', maxWidth: '300px', marginBottom: '40px' }}
         >
           Rasa yang selalu kamu rindukan, kini hadir dari dapur kami di Bali.
         </p>
