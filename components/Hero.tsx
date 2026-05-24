@@ -40,7 +40,7 @@ export default function Hero() {
           className="text-white text-center font-bold mx-auto"
           style={{ fontFamily: 'var(--font-plus-jakarta)', fontSize: '26px', lineHeight: '32px', maxWidth: '320px', marginBottom: '16px' }}
         >
-          Kue Nastar &amp; Putri Salju Homemade dari Bali
+          Kue Nastar &amp; Putri Salju Homemade dari <span style={{ fontWeight: 900 }}>Bali</span>
         </h1>
 
         {/* Emotional subline */}
