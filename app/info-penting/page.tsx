@@ -9,44 +9,44 @@ const SECTIONS = [
   {
     title: '📦 Produk Rusak atau Tidak Sesuai',
     items: [
-      'Kalau produk kamu sampai dalam kondisi rusak, pecah, atau tidak sesuai pesanan — segera hubungi Naomi maksimal 24 jam setelah paket diterima.',
-      'Kirimkan foto kondisi produk dan kemasan ke WhatsApp kami. Tanpa foto, klaim tidak bisa diproses.',
-      'Klaim yang valid akan diganti dengan produk baru di pengiriman berikutnya. Kami tidak mengembalikan uang (refund) untuk alasan selera atau perubahan pikiran.',
+      'Kalau kuenya sampai dalam kondisi rusak atau pecah, langsung WA Naomi ya — paling lama 24 jam setelah paket kamu terima.',
+      'Foto dulu kondisi produk dan kemasannya sebelum chat, biar bisa kami proses dengan cepat.',
+      'Kalau memang rusak dari pengiriman, kami ganti di order berikutnya. Tapi kalau alasannya nggak cocok rasanya atau salah pesan sendiri — itu di luar yang bisa kami bantu, ya. Mohon maklum.',
     ],
   },
   {
     title: '💸 Refund',
     items: [
-      'Refund hanya berlaku jika: produk terbukti rusak saat diterima, atau pesanan tidak dapat kami penuhi karena keterbatasan stok.',
-      'Refund diproses dalam 1–3 hari kerja ke rekening atau dompet digital yang kamu daftarkan.',
-      'Kami tidak melayani refund untuk alasan: salah pesan, berubah pikiran, atau keterlambatan kurir di luar kendali kami.',
+      'Kami kembalikan uangmu kalau produknya rusak saat sampai, atau ternyata kami nggak bisa penuhi pesananmu.',
+      'Prosesnya biasanya 1–3 hari kerja — tapi ini juga bergantung antrean, dan Naomi akan selalu kasih tahu sebelum kamu bayar.',
+      'Refund untuk alasan berubah pikiran atau salah pesan — maaf, itu nggak bisa kami proses ya.',
     ],
   },
   {
     title: '🕐 Antrean Pesanan',
     items: [
-      'Kami membatasi produksi agar kualitas tetap terjaga. Pesanan diproses sesuai urutan masuk.',
-      'Kalau slot hari ini sudah penuh, pesananmu otomatis masuk ke antrean hari berikutnya.',
-      'Meskipun kami biasanya bisa memproses dalam 1–3 hari kerja, jadwal ini tetap bergantung pada antrean yang sedang berjalan.',
-      'Naomi akan selalu konfirmasi estimasi tanggal pengiriman dan posisi antreanmu sebelum kamu melakukan pembayaran — jadi kamu tahu persis kapan kuenya tiba.',
-      'Pesanan yang sudah dibayar tidak akan tergeser — posisimu aman.',
+      'Kami batasi produksi biar kualitasnya tetap terjaga. Jadi semua pesanan masuk antrean sesuai urutan.',
+      'Kalau slot hari ini sudah penuh, pesananmu otomatis masuk ke hari berikutnya.',
+      'Kami biasanya bisa proses dalam 1–3 hari kerja — tapi ini tergantung antrean yang lagi jalan.',
+      'Naomi akan selalu konfirmasi dulu estimasi tanggalnya sebelum kamu transfer. Jadi kamu tahu persis kapan kuenya tiba.',
+      'Begitu sudah bayar, posisimu di antrean aman dan nggak akan tergeser.',
     ],
   },
   {
     title: '⚠️ Waspada Penipuan Transfer',
     items: [
-      'Kami HANYA menerima pembayaran via transfer BCA. Rekening resmi kami: BCA 0212991706 a/n Celly Novanda.',
-      'Selalu verifikasi nomor rekening ini langsung dengan Naomi via WhatsApp sebelum transfer — jangan percaya rekening yang dikirim lewat SMS, email, atau DM Instagram.',
-      'Jika ada yang mengatasnamakan Naomi\'s Bites dan memberikan nomor rekening berbeda — itu penipuan. Segera abaikan dan laporkan ke kami.',
-      'Nomor WhatsApp resmi kami: +62 851-9082-5988. Tidak ada nomor lain.',
+      'Kami cuma nerima bayar lewat transfer BCA 0212991706 a/n Celly Novanda. Itu satu-satunya rekening kami.',
+      'Sebelum transfer, pastiin dulu nomor rekeningnya lewat chat WhatsApp Naomi langsung ya. Jangan percaya rekening yang datang dari SMS, email, atau DM Instagram.',
+      'Ada yang ngaku-ngaku Naomi\'s Bites tapi kasih nomor rekening beda? Itu penipu. Abaikan dan langsung kabarin kami.',
+      'WhatsApp resmi kami: +62 851-9082-5988. Nggak ada nomor lain.',
     ],
   },
   {
     title: '🚚 Pengiriman',
     items: [
-      'Kami mengirim ke seluruh Indonesia via JNE, J&T, atau SiCepat.',
-      'Ongkos kirim ditanggung pembeli dan dikonfirmasi sebelum pembayaran.',
-      'Setelah paket diserahkan ke kurir, keterlambatan di luar tanggung jawab kami — tapi kami siap bantu lacak paket kamu.',
+      'Kami kirim ke seluruh Indonesia via JNE, J&T, atau SiCepat.',
+      'Ongkir ditanggung pembeli dan akan dikonfirmasi Naomi sebelum kamu bayar — jadi nggak ada kejutan.',
+      'Begitu paket sudah di tangan kurir, keterlambatan ada di luar kendali kami. Tapi kalau ada masalah, chat Naomi dan kami bantu lacak bareng.',
     ],
   },
 ]
