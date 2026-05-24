@@ -17,14 +17,14 @@ const SECTIONS = [
     title: '💸 Refund',
     items: [
       'Uang dikembalikan hanya kalau produknya rusak saat sampai, atau kami ternyata nggak bisa penuhi pesananmu.',
-      'Refund karena berubah pikiran atau salah pesan — maaf, nggak bisa kami proses ya.',
+      'Refund karena berubah pikiran atau salah pesan, maaf nggak bisa kami proses ya.',
     ],
   },
   {
     title: '🕐 Antrean & Jadwal',
     items: [
       'Produksi kami batasi biar kualitas tetap terjaga, jadi semua pesanan masuk antrean.',
-      'Naomi akan konfirmasi estimasi tanggal dan ongkir dulu sebelum kamu transfer — nggak ada kejutan.',
+      'Naomi akan konfirmasi estimasi tanggal dan ongkir dulu sebelum kamu transfer. Nggak ada kejutan.',
       'Begitu sudah bayar, posisi antreanmu aman.',
     ],
   },
@@ -40,7 +40,7 @@ const SECTIONS = [
     title: '🚚 Pengiriman',
     items: [
       'Kami kirim ke seluruh Indonesia via JNE, J&T, atau SiCepat. Ongkir ditanggung pembeli.',
-      'Keterlambatan dari kurir di luar kendali kami — tapi kalau ada masalah, chat Naomi dan kami bantu lacak.',
+      'Keterlambatan dari kurir di luar kendali kami, tapi kalau ada masalah chat Naomi dan kami bantu lacak.',
     ],
   },
 ]
@@ -98,7 +98,7 @@ export default function InfoPenting() {
         <div style={{ backgroundColor: '#F3F8FF', borderRadius: 16, padding: '20px 20px' }}>
           <p style={{ color: '#1C355D', fontSize: 14, fontWeight: 700, margin: '0 0 6px' }}>Ada pertanyaan?</p>
           <p style={{ color: '#6B7280', fontSize: 13, lineHeight: 1.6, margin: '0 0 16px' }}>
-            Langsung chat Naomi — lebih cepat dan lebih personal.
+            Langsung chat Naomi, lebih cepat dan lebih personal.
           </p>
           <a
             href="https://wa.me/6285190825988?text=Halo+Naomi!+Saya+mau+tanya+soal+info+penting+%F0%9F%98%8A"
