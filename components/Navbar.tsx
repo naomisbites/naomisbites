@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { label: 'Cara Pesan',   href: '#cara-pesan' },
   { label: 'Testimoni',    href: '#testimonials' },
   { label: 'FAQ',          href: '#faq' },
+  { label: 'Info Penting', href: '/info-penting' },
 ]
 
 export default function Navbar() {
