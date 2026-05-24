@@ -90,7 +90,7 @@ export default async function Products() {
       id="products"
       style={{
         backgroundColor: '#1C355D',
-        padding: '48px 24px 56px',
+        padding: '32px 24px 56px',
         fontFamily: 'var(--font-plus-jakarta)',
       }}
     >
