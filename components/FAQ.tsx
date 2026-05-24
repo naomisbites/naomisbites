@@ -30,7 +30,7 @@ export default function FAQ() {
       id="faq"
       style={{ backgroundColor: '#F3F8FF', fontFamily: 'var(--font-plus-jakarta)' }}
     >
-      <div style={{ padding: '48px 24px 0' }}>
+      <div style={{ padding: '48px 24px 56px' }}>
         {/* Header */}
         <div style={{ marginBottom: 24 }}>
           <p style={{
@@ -118,7 +118,7 @@ export default function FAQ() {
           aspectRatio: '3 / 4',
           borderRadius: 16,
           overflow: 'hidden',
-          marginBottom: 56,
+          marginBottom: 0,
         }}>
           <Image
             src="/images/nastar.jpg"
