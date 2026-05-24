@@ -147,6 +147,13 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        {/* Preload hero background — CSS background-images are not auto-optimised by Next.js */}
+        <link
+          rel="preload"
+          href="/images/hero-bg-hq.jpg"
+          as="image"
+          type="image/jpeg"
+        />
       </head>
       <body className="text-navy font-body" style={{ backgroundColor: '#FFFFFF' }}>
         {/* Constrain to mobile width — always shows the mobile layout regardless of screen size */}

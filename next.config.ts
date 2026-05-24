@@ -49,6 +49,12 @@ const securityHeaders = [
 ]
 
 const nextConfig: NextConfig = {
+  images: {
+    // Site is 430px max-width — only generate sizes relevant to mobile
+    deviceSizes: [430, 640, 860],
+    imageSizes: [64, 128, 256, 430],
+    formats: ['image/webp'],
+  },
   async headers() {
     return [
       {
