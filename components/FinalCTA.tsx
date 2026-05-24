@@ -5,7 +5,7 @@ export default function FinalCTA() {
       style={{
         backgroundColor: '#F3F8FF',
         fontFamily: 'var(--font-plus-jakarta)',
-        padding: '56px 32px 64px',
+        padding: '32px 32px 64px',
         textAlign: 'center',
         display: 'flex',
         flexDirection: 'column',
