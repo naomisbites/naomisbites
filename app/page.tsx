@@ -16,8 +16,8 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <FounderStory />
         <Products />
+        <FounderStory />
         <HowToOrder />
         <Testimonials />
         <FAQ />
