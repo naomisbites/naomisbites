@@ -6,6 +6,7 @@ import HowToOrder from '@/components/HowToOrder'
 import Testimonials from '@/components/Testimonials'
 import FAQ from '@/components/FAQ'
 import FinalCTA from '@/components/FinalCTA'
+import Footer from '@/components/Footer'
 import SkipToProductsButton from '@/components/SkipToProductsButton'
 import FloatingWhatsApp from '@/components/FloatingWhatsApp'
 
@@ -22,6 +23,7 @@ export default function Home() {
         <FAQ />
         <FinalCTA />
       </main>
+      <Footer />
       <SkipToProductsButton />
       <FloatingWhatsApp />
     </>
