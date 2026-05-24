@@ -56,26 +56,8 @@ export default function FAQ() {
           </h2>
         </div>
 
-        {/* Image — 3:4 aspect ratio */}
-        <div style={{
-          position: 'relative',
-          width: '100%',
-          aspectRatio: '3 / 4',
-          borderRadius: 16,
-          overflow: 'hidden',
-          marginBottom: 32,
-        }}>
-          <Image
-            src="/images/nastar.jpg"
-            alt="Naomi's Bites kue nastar"
-            fill
-            style={{ objectFit: 'cover' }}
-            sizes="(max-width: 430px) 100vw, 430px"
-          />
-        </div>
-
         {/* Accordions */}
-        <div style={{ paddingBottom: 56 }}>
+        <div style={{ paddingBottom: 32 }}>
           {FAQS.map((faq, i) => (
             <div
               key={i}
@@ -127,6 +109,24 @@ export default function FAQ() {
               )}
             </div>
           ))}
+        </div>
+
+        {/* Image — 3:4 aspect ratio, below last question */}
+        <div style={{
+          position: 'relative',
+          width: '100%',
+          aspectRatio: '3 / 4',
+          borderRadius: 16,
+          overflow: 'hidden',
+          marginBottom: 56,
+        }}>
+          <Image
+            src="/images/nastar.jpg"
+            alt="Naomi's Bites kue nastar"
+            fill
+            style={{ objectFit: 'cover' }}
+            sizes="(max-width: 430px) 100vw, 430px"
+          />
         </div>
       </div>
     </section>
