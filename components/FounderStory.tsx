@@ -101,8 +101,7 @@ export default function FounderStory() {
         <>Halo, aku Naomi. Aku tumbuh di Palembang, kota yang orang-orangnya emang nggak bisa kompromi soal makanan 😂 </>,
         <>Di sana, kue homemade itu hal yang biasa. Nastar, putri salju ; semua orang tau mana yang beneran enak dan mana yang nggak.</>,
         <>Pas pindah ke Bali, rasa itu semakin menghilang. Mau beli di mana pun, selalu ada yang kurang. Jadi aku bikin sendiri. </>,
-        <>Tiga bulan nyempurnain resep, sampai akhirnya ketemu yang beneran pas. Naomi&apos;s Bites aku buat khusus untuk kamu yang kangen <span style={{ textDecoration: 'underline' }}>rumah</span>; dengan&nbsp;<strong style={{ fontWeight: 700 }}>Wijsman butter</strong>,&nbsp;<strong style={{ fontWeight: 700 }}>nanas asli</strong>. Sementara aku batasi produksi 4 toples per hari dulu yaa.</>,
-        <>Karena bagiku, kualitas nggak bisa dikompromikan.</>,
+        <>Tiga bulan nyempurnain resep, sampai akhirnya ketemu yang beneran pas. Naomi&apos;s Bites aku buat khusus untuk kamu yang kangen <span style={{ textDecoration: 'underline' }}>rumah</span>; dengan&nbsp;<strong style={{ fontWeight: 700 }}>Wijsman butter</strong>,&nbsp;<strong style={{ fontWeight: 700 }}>nanas asli</strong>. Semoga sampai ke kamu rasanya.</>,
       ].map((para, i) => (
         <p
           key={i}
