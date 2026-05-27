@@ -7,8 +7,8 @@ export default function Hero() {
         minHeight: '520px',
         maxHeight: '720px',
         backgroundImage: 'url(/images/hero-bg-hq.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundSize: '160%',
+        backgroundPosition: 'center 30%',
       }}
     >
 
