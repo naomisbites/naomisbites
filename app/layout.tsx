@@ -83,6 +83,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
+  verification: {
+    other: {
+      'facebook-domain-verification': '771ruy6hnd8c8st7vzxtbybtciiqc8',
+    },
+  },
 }
 
 const structuredData = {
