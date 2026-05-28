@@ -117,6 +117,59 @@ const structuredData = {
       },
     },
     {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Bagaimana cara memesan Naomi\'s Bites?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Pesan langsung via WhatsApp ke +62 851-9082-5988. Pilih produk dan ukuran toples, lalu konfirmasi alamat pengiriman.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Apakah Naomi\'s Bites bisa dikirim ke seluruh Indonesia?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Ya, kami mengirim ke seluruh Indonesia menggunakan jasa ekspedisi pilihan.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Apa yang membuat Naomi\'s Bites berbeda dari kue kering lainnya?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Kami menggunakan Wijsman butter (bukan margarin) dan nanas asli untuk isian nastar. Setiap kue dibentuk dan ditimbang gram per gram — tidak ada mesin, tidak ada kompromi.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Berapa lama kue Naomi\'s Bites bisa tahan?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Kue tahan hingga 3 minggu dalam toples tertutup di suhu ruangan, dan hingga 1 bulan jika disimpan di lemari es.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Berapa minimum pemesanan?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Minimum pemesanan adalah 1 toples. Tersedia ukuran 600ml dan 800ml.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Metode pembayaran apa saja yang tersedia?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Kami menerima transfer bank dan konfirmasi pembayaran via WhatsApp.',
+          },
+        },
+      ],
+    },
+    {
       '@type': 'Product',
       name: 'Kue Putri Salju',
       description:
