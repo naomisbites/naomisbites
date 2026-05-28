@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/admin', '/api/'],
       },
     ],
-    sitemap: 'https://naomisbites.vercel.app/sitemap.xml',
-    host: 'https://naomisbites.vercel.app',
+    sitemap: 'https://naomisbites.id/sitemap.xml',
+    host: 'https://naomisbites.id',
   }
 }
