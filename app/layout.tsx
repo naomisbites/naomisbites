@@ -99,7 +99,7 @@ const structuredData = {
         addressCountry: 'ID',
       },
       sameAs: ['https://www.instagram.com/naomisbitesofficial'],
-      priceRange: 'Rp 116.000 - Rp 148.000',
+      priceRange: 'Rp 132.000 - Rp 148.000',
       servesCuisine: 'Indonesian',
     },
     {
@@ -110,7 +110,7 @@ const structuredData = {
       brand: { '@type': 'Brand', name: "Naomi's Bites" },
       offers: {
         '@type': 'Offer',
-        price: '132000',
+        price: '148000',
         priceCurrency: 'IDR',
         availability: 'https://schema.org/InStock',
         url: `${siteUrl}#products`,
@@ -124,7 +124,7 @@ const structuredData = {
       brand: { '@type': 'Brand', name: "Naomi's Bites" },
       offers: {
         '@type': 'Offer',
-        price: '116000',
+        price: '132000',
         priceCurrency: 'IDR',
         availability: 'https://schema.org/InStock',
         url: `${siteUrl}#products`,
