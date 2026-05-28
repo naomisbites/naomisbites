@@ -22,13 +22,13 @@ const plusJakarta = Plus_Jakarta_Sans({
   style: ['normal', 'italic'],
 })
 
-const siteUrl = 'https://naomisbites.vercel.app'
+const siteUrl = 'https://naomisbites.id'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Naomi's Bites — Nastar & Putri Salju Homemade dari Bali",
   description:
-    'Nastar dan putri salju homemade dibuat dengan Wijsman butter dan nanas asli. Dikirim ke seluruh Indonesia. Maks. 4 toples per hari — karena kualitas tidak bisa dikompromikan.',
+    'Nastar dan putri salju homemade dibuat dengan Wijsman butter dan nanas asli. Dibuat gram per gram, dikirim ke seluruh Indonesia.',
   keywords: [
     'nastar homemade',
     'putri salju homemade',
@@ -99,18 +99,18 @@ const structuredData = {
         addressCountry: 'ID',
       },
       sameAs: ['https://www.instagram.com/naomisbitesofficial'],
-      priceRange: 'Rp 70.000 - Rp 75.000',
+      priceRange: 'Rp 116.000 - Rp 148.000',
       servesCuisine: 'Indonesian',
     },
     {
       '@type': 'Product',
       name: 'Kue Nastar',
       description:
-        'Kue nastar homemade dengan kulit lembut dari Wijsman butter dan isian nanas asli. Dibuat gram per gram, maksimal 4 toples per hari.',
+        'Kue nastar homemade dengan kulit lembut dari Wijsman butter dan isian nanas asli. Dibuat gram per gram dengan bahan pilihan.',
       brand: { '@type': 'Brand', name: "Naomi's Bites" },
       offers: {
         '@type': 'Offer',
-        price: '75000',
+        price: '132000',
         priceCurrency: 'IDR',
         availability: 'https://schema.org/InStock',
         url: `${siteUrl}#products`,
@@ -124,7 +124,7 @@ const structuredData = {
       brand: { '@type': 'Brand', name: "Naomi's Bites" },
       offers: {
         '@type': 'Offer',
-        price: '70000',
+        price: '116000',
         priceCurrency: 'IDR',
         availability: 'https://schema.org/InStock',
         url: `${siteUrl}#products`,

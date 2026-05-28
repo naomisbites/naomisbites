@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 
-const BASE = 'https://naomisbites.vercel.app'
+const BASE = 'https://naomisbites.id'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
