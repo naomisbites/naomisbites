@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function FounderStory() {
   return (
     <section
@@ -56,9 +58,11 @@ export default function FounderStory() {
             overflow: 'hidden',
           }}
         >
-          <img
+          <Image
             src="/images/naomi-photo.jpg"
             alt="Naomi, Founder of Naomi's Bites"
+            width={196}
+            height={214}
             style={{
               width: '100%',
               height: '100%',
